@@ -1,0 +1,26 @@
+{
+  "name": "eslint-config-silvermine",
+  "version": "0.9.0",
+  "description": "JS Code Standards for all SilverMine projects - eslint enforcement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvermine/eslint-config-silvermine.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "author": "Jeremy Thomerson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silvermine/eslint-config-silvermine/issues"
+  },
+  "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
+  "devDependencies": {
+    "eslint": "2.11.1"
+  }
+}
