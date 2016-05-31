@@ -108,7 +108,13 @@ module.exports = {
       'linebreak-style': [ 'error', 'unix' ],
       'lines-around-comment': 'error',
       'max-depth': [ 'error', 4 ],
-      'max-len': [ 'error', 140 ],
+      'max-len': [
+         'error',
+         {
+            'code': 140,
+            'ignoreUrls': true,
+         }
+      ],
       'max-nested-callbacks': [ 'error', 6 ],
       'max-params': [ 'error', 5 ],
       'max-statements-per-line': 'error',
