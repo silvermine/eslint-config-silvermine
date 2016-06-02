@@ -1,0 +1,25 @@
+{
+  "name": "eslint-plugin-silvermine",
+  "version": "0.1.0",
+  "description": "eslint plugins to support our JS Code Standards. See eslint-config-silvermine",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvermine/eslint-plugin-silvermine.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin"
+  ],
+  "author": "Jeremy Thomerson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silvermine/eslint-plugin-silvermine/issues"
+  },
+  "homepage": "https://github.com/silvermine/eslint-plugin-silvermine#readme",
+  "devDependencies": {
+    "eslint": "2.11.1"
+  }
+}
