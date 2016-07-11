@@ -65,3 +65,12 @@ function validCase() {
          console.log(err);
       });
 }
+
+// VALID - you can call functions on something that was an argument to the
+// initial chained call
+function validCase() {
+   return service.doSomething(c)
+      .then(function(d) {
+         return x;
+      }.bind(this));
+}
