@@ -9,7 +9,16 @@ module.exports = {
 
    'extends': 'eslint:recommended',
 
+   'plugins': [
+      'silvermine',
+   ],
+
    'rules': {
+
+      'silvermine/array-indentation': 'error',
+      'silvermine/call-indentation': 'error',
+      'silvermine/fluent-chaining': 'error',
+      'silvermine/no-multiple-inline-functions': 'error',
 
       'comma-dangle': [ 'error', 'only-multiline' ],
       'no-unsafe-finally': 'warn',
