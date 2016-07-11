@@ -1,6 +1,6 @@
 {
-    "env": {
-        "node": true
-    },
-    "extends": "eslint-config-silvermine"
+   "env": {
+      "node": true
+   },
+   "extends": "eslint-config-silvermine/node"
 }
