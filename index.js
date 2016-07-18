@@ -113,7 +113,14 @@ module.exports = {
       'consistent-this': [ 'error', 'self' ],
       'eol-last': 'error',
       'key-spacing': 'error',
-      'keyword-spacing': 'error',
+      'keyword-spacing': [
+         'error',
+         {
+            'overrides': {
+               'catch': { 'after': false },
+            },
+         }
+      ],
       'linebreak-style': [ 'error', 'unix' ],
       'lines-around-comment': 'error',
       'max-depth': [ 'error', 4 ],
