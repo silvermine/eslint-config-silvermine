@@ -42,18 +42,18 @@ validExample2 = formatCode(
 //------------------------------------------------------------------------------
 
 ruleTester.run('array-indentation', rule, {
-    valid: [
-       validExample1,
-       validExample2
-    ],
+   valid: [
+      validExample1,
+      validExample2
+   ],
 
-    invalid: [
-        {
-            code: invalidExample,
-            errors: [ {
-                message: 'Array expressions must begin and end with the same indentation',
-                type: 'ArrayExpression'
-            } ]
-        }
-    ]
+   invalid: [
+      {
+         code: invalidExample,
+         errors: [ {
+            message: 'Array expressions must begin and end with the same indentation',
+            type: 'ArrayExpression'
+         } ]
+      }
+   ]
 });
