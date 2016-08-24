@@ -136,7 +136,9 @@ function checkSpacingErrorWithTabOption() {
 }
 
 function checkSpacingErrorWhenCallHasFunctionArguments() {
-   var code = formatCode(
+   var code;
+
+   code = formatCode(
       'previous.then(function(val) {',
       '   return val.something;',
       '})',
