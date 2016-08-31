@@ -30,6 +30,16 @@ validExample = formatCode(
    '',
    'for (var str in arr) {',
    '   a = a + str;',
+   '}',
+   '',
+   'for (var i = 0; i < 3;) {',
+   '  i += 2;',
+   '}',
+   'for (;i < 2; i++) {',
+   '  a = i;',
+   '}',
+   'for (;i < 3;) {',
+   '  i++;',
    '}'
 );
 
