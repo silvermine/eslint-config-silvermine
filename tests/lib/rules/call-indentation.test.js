@@ -30,17 +30,17 @@ validExample = formatCode(
 //------------------------------------------------------------------------------
 
 ruleTester.run('call-indentation', rule, {
-    valid: [
-       validExample
-    ],
+   valid: [
+      validExample,
+   ],
 
-    invalid: [
-        {
-            code: invalidExample,
-            errors: [ {
-                message: 'Call expressions must begin and end with the same indentation',
-                type: 'CallExpression'
-            } ]
-        }
-    ]
+   invalid: [
+      {
+         code: invalidExample,
+         errors: [ {
+            message: 'Call expressions must begin and end with the same indentation',
+            type: 'CallExpression'
+         } ],
+      },
+   ],
 });

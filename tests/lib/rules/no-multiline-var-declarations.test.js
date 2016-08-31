@@ -1,6 +1,6 @@
 /**
- * @fileoverview Check that no array or object declarations span multiple lines.
- */
+* @fileoverview Check that no array or object declarations span multiple lines.
+*/
 'use strict';
 
 //------------------------------------------------------------------------------
@@ -46,24 +46,24 @@ invalidExample2 = formatCode(
 //------------------------------------------------------------------------------
 
 ruleTester.run('no-multiline-var-declaration', rule, {
-    valid: [
-       validExample,
-    ],
+   valid: [
+      validExample,
+   ],
 
-    invalid: [
-        {
-            code: invalidExample,
-            errors: [ {
-                message: 'Variable declaration for myArray should not span multiple lines.',
-                type: 'VariableDeclarator'
-            } ]
-        },
-        {
-            code: invalidExample2,
-            errors: [ {
-                message: 'Variable declaration for myObj should not span multiple lines.',
-                type: 'VariableDeclarator'
-            } ]
-        },
-    ]
+   invalid: [
+      {
+         code: invalidExample,
+         errors: [ {
+            message: 'Variable declaration for myArray should not span multiple lines.',
+            type: 'VariableDeclarator'
+         } ]
+      },
+      {
+         code: invalidExample2,
+         errors: [ {
+            message: 'Variable declaration for myObj should not span multiple lines.',
+            type: 'VariableDeclarator'
+         } ]
+      },
+   ]
 });
