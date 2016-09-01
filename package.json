@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-silvermine",
-  "version": "0.9.3",
+  "version": "1.0.0",
   "description": "JS Code Standards for all SilverMine projects - eslint enforcement",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
   "dependencies": {
-    "eslint-plugin-silvermine": "0.9.0"
+    "eslint-plugin-silvermine": "1.0.1"
   },
   "devDependencies": {
     "eslint": "2.11.1"

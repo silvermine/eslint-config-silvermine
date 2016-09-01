@@ -19,6 +19,9 @@ module.exports = {
       'silvermine/call-indentation': 'error',
       'silvermine/fluent-chaining': 'error',
       'silvermine/no-multiple-inline-functions': 'error',
+      'silvermine/no-multiline-conditionals': 'error',
+      'silvermine/no-multiline-var-declarations': 'error',
+      'silvermine/indent': [ 'error', 3, { 'VariableDeclaratorOffset': { 'var': 1, 'let': 1, 'const': 3 }, 'SwitchCase': 1 } ],
 
       'comma-dangle': [ 'error', 'only-multiline' ],
       'no-unsafe-finally': 'warn',
