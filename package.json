@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
   "dependencies": {
-    "eslint-plugin-silvermine": "1.0.0"
+    "eslint-plugin-silvermine": "1.0.1"
   },
   "devDependencies": {
     "eslint": "2.11.1"
