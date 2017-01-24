@@ -23,7 +23,7 @@ module.exports = {
       'silvermine/no-multiline-var-declarations': 'error',
       'silvermine/indent': [ 'error', 3, { 'VariableDeclaratorOffset': { 'var': 1, 'let': 1, 'const': 3 }, 'SwitchCase': 1 } ],
 
-      'comma-dangle': [ 'error', 'only-multiline' ],
+      'comma-dangle': [ 'error', 'never' ],
       'no-unsafe-finally': 'warn',
 
       'array-callback-return': 'error',
@@ -122,7 +122,7 @@ module.exports = {
             'overrides': {
                'catch': { 'after': false },
             },
-         }
+         },
       ],
       'linebreak-style': [ 'error', 'unix' ],
       'lines-around-comment': 'error',
@@ -132,14 +132,14 @@ module.exports = {
          {
             'code': 140,
             'ignoreUrls': true,
-         }
+         },
       ],
       'max-nested-callbacks': [ 'error', 6 ],
       'max-params': [ 'error', 5 ],
       'max-statements-per-line': 'error',
       'new-cap': [
          'error',
-         { 'capIsNewExceptions': [ 'Q' ] }
+         { 'capIsNewExceptions': [ 'Q' ] },
       ],
       'new-parens': 'error',
       'newline-after-var': 'error',
@@ -152,14 +152,14 @@ module.exports = {
             'max': 2,
             'maxBOF': 0,
             'maxEOF': 0,
-         }
+         },
       ],
       'no-negated-condition': 'error',
       'no-nested-ternary': 'error',
       'no-new-object': 'error',
       'no-plusplus': [
          'error',
-         { 'allowForLoopAfterthoughts': true }
+         { 'allowForLoopAfterthoughts': true },
       ],
       'no-restricted-syntax': [
          'error',
@@ -185,7 +185,7 @@ module.exports = {
          'JSXSpreadAttribute',
          'JSXText',
          'WithStatement',
-         'YieldExpression'
+         'YieldExpression',
       ],
       'no-spaced-func': 'error',
       'no-trailing-spaces': 'error',
