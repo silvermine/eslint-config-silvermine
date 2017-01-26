@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-silvermine",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "eslint plugins to support our JS Code Standards. See eslint-config-silvermine",
   "scripts": {
     "test": "mocha 'tests/**/*.test.js'"
