@@ -24,6 +24,7 @@
   "homepage": "https://github.com/silvermine/eslint-plugin-silvermine#readme",
   "dependencies": {
     "class.extend": "0.9.2",
+    "lodash.assign": "4.2.0",
     "underscore": "1.8.3"
   },
   "engines": {
