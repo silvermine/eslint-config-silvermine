@@ -22,6 +22,9 @@ module.exports = {
       'silvermine/no-multiline-conditionals': 'error',
       'silvermine/no-multiline-var-declarations': 'error',
       'silvermine/indent': [ 'error', 3, { 'VariableDeclaratorOffset': { 'var': 1, 'let': 1, 'const': 3 }, 'SwitchCase': 1 } ],
+      'silvermine/empty-object-spacing': 'error',
+      'silvermine/empty-array-spacing': 'error',
+      'silvermine/uninitialized-last': 'error',
 
       'comma-dangle': [ 'error', 'never' ],
       'no-unsafe-finally': 'warn',
