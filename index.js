@@ -1,5 +1,9 @@
-/*
- * Copyright (c) 2016 Jeremy Thomerson
+/**
+ * This file contains the default linting configuration for JS code wherever it may
+ * appear. Separately, there are rulesets like node, browser, and node-test, each for
+ * their respective environments.
+ *
+ * Copyright (c) 2017 Jeremy Thomerson
  * Licensed under the MIT license.
  */
 
