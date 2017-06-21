@@ -30,7 +30,7 @@ module.exports = {
       'silvermine/empty-array-spacing': 'error',
       'silvermine/uninitialized-last': 'error',
 
-      'comma-dangle': [ 'error', 'never' ],
+      'comma-dangle': [ 'error', 'always-multiline' ],
       'no-unsafe-finally': 'warn',
 
       'array-callback-return': 'error',
