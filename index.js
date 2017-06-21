@@ -135,6 +135,7 @@ module.exports = {
          'error',
          {
             'code': 140,
+            'comments': 90,
             'ignoreUrls': true,
          },
       ],
