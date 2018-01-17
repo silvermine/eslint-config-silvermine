@@ -16,6 +16,15 @@ Because we need it. Whitespace errors are evil. As are the other hundreds of
 types of errors this protects us from.
 
 
+## Notes on Semantic Versioning
+
+See the [notes we made in eslint-plugin-silvermine][semver-notes] regarding our use of
+version numbers here. The same decisions made for that repo also apply to this repo,
+basically for the same reasons.
+
+[semver-notes]: https://github.com/silvermine/eslint-plugin-silvermine/#note-on-semantic-versioning
+
+
 ## License
 
 This software is released under the MIT license. See [the license
