@@ -24,7 +24,7 @@
     "eslint-plugin-silvermine": "1.2.0"
   },
   "devDependencies": {
-    "grunt": "1.0.1",
+    "grunt": "1.0.3",
     "grunt-eslint": "20.1.0"
   }
 }
