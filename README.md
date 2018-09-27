@@ -1,8 +1,8 @@
 # Silvermine ESLint Rules
 
-[![Build Status](https://travis-ci.org/silvermine/eslint-config-silvermine.png?branch=master)](https://travis-ci.org/silvermine/eslint-config-silvermine)
-[![Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine.png)](https://david-dm.org/silvermine/eslint-config-silvermine)
-[![Dev Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine/dev-status.png)](https://david-dm.org/silvermine/eslint-config-silvermine#info=devDependencies&view=table)
+[![Build Status](https://travis-ci.org/silvermine/eslint-config-silvermine.svg?branch=master)](https://travis-ci.org/silvermine/eslint-config-silvermine)
+[![Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine.svg)](https://david-dm.org/silvermine/eslint-config-silvermine)
+[![Dev Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine/dev-status.svg)](https://david-dm.org/silvermine/eslint-config-silvermine#info=devDependencies&view=table)
 
 
 ## What?
