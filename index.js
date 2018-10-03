@@ -14,21 +14,21 @@ module.exports = {
    'extends': 'eslint:recommended',
 
    'plugins': [
-      'silvermine',
+      '@silvermine/eslint-plugin-silvermine',
    ],
 
    'rules': {
 
-      'silvermine/array-indentation': 'error',
-      'silvermine/call-indentation': 'error',
-      'silvermine/fluent-chaining': 'error',
-      'silvermine/no-multiple-inline-functions': 'error',
-      'silvermine/no-multiline-conditionals': 'error',
-      'silvermine/no-multiline-var-declarations': 'error',
-      'silvermine/indent': [ 'error', 3, { 'VariableDeclaratorOffset': { 'var': 1, 'let': 1, 'const': 3 }, 'SwitchCase': 1 } ],
-      'silvermine/empty-object-spacing': 'error',
-      'silvermine/empty-array-spacing': 'error',
-      'silvermine/uninitialized-last': 'error',
+      '@silvermine/silvermine/array-indentation': 'error',
+      '@silvermine/silvermine/call-indentation': 'error',
+      '@silvermine/silvermine/fluent-chaining': 'error',
+      '@silvermine/silvermine/no-multiple-inline-functions': 'error',
+      '@silvermine/silvermine/no-multiline-conditionals': 'error',
+      '@silvermine/silvermine/no-multiline-var-declarations': 'error',
+      '@silvermine/silvermine/indent': [ 'error', 3, { 'VariableDeclaratorOffset': { 'var': 1, 'let': 1, 'const': 3 }, 'SwitchCase': 1 } ],
+      '@silvermine/silvermine/empty-object-spacing': 'error',
+      '@silvermine/silvermine/empty-array-spacing': 'error',
+      '@silvermine/silvermine/uninitialized-last': 'error',
 
       'comma-dangle': [ 'error', 'always-multiline' ],
       'no-unsafe-finally': 'warn',
