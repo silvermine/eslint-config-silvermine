@@ -1,7 +1,14 @@
 language: node_js
 node_js:
-   - '4.5'
-before_script:
-   - npm install -g grunt
+  - "node" # Latest node version
+  - "lts/*" # Latest LTS version
+  - "10"
+  - "8"
+  - "6"
+  - "5"
+  - "4.3.2"
+
+before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+
 script:
    - grunt standards
