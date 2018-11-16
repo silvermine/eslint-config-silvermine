@@ -14,8 +14,20 @@ module.exports = {
    'extends': 'eslint:recommended',
 
    'plugins': [
-      '@silvermine/eslint-plugin-silvermine',
+      '@silvermine/eslint-plugin-silvermine', // Our custom rules
+      'typescript', // TypeScript-specific rules
    ],
+
+   'parserOptions': {
+      // Setting the ecmaVersion to 2018 allows ESLint to parse any file that has valid
+      // syntax, even if we use things like spread and rest syntax. It would be nice to
+      // set this to something like 'latest', but you must specify a specific version.
+      'ecmaVersion': 2018,
+   },
+
+   'env': {
+      'es6': true,
+   },
 
    'rules': {
 
@@ -172,15 +184,9 @@ module.exports = {
       ],
       'no-restricted-syntax': [
          'error',
-         'ArrowFunctionExpression',
-         'ClassBody',
-         'ClassDeclaration',
-         'ClassExpression',
          'DoWhileStatement',
          'DebuggerStatement',
          'EmptyStatement',
-         'ExperimentalRestProperty',
-         'ExperimentalSpreadProperty',
          'ForInStatement',
          'JSXIdentifier',
          'JSXNamespacedName',
@@ -201,7 +207,7 @@ module.exports = {
       'no-unneeded-ternary': 'error',
       'no-whitespace-before-property': 'error',
       'object-curly-spacing': [ 'error', 'always' ],
-      'one-var': [ 'error', 'always' ],
+      'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       'one-var-declaration-per-line': 'error',
       'quote-props': [ 'error', 'as-needed', { 'keywords': true, 'unnecessary': false } ],
       'quotes': [ 'error', 'single' ],
@@ -214,5 +220,56 @@ module.exports = {
       'space-unary-ops': 'error',
       'unicode-bom': 'error',
 
+      'arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
    },
+
+   'overrides': [
+      {
+         'files': [ '*.ts' ],
+         'parser': 'typescript-eslint-parser',
+         'parserOptions': {
+            'sourceType': 'module',
+            // Disable warning banner for possibly incompatible versions of TypeScript
+            'loggerFn': false,
+         },
+         'rules': {
+            // TODO: figure out how to fix no-undef.
+            // Currently, no-undef causes false positives for TypeScript class properties.
+            // With TypeScript-only code this rule can safely be disabled because
+            // TypeScript won't compile if the definition is missing. However, if we use
+            // any JavaScript in the project we need to have it enabled.
+            'no-undef': 'off',
+            // The standard ESLint `no-unused-vars' rule will throw false positives with
+            // class properties in TypeScript. The TypeScript-specific rule fixes this.
+            'typescript/no-unused-vars': 'error',
+            'no-unused-vars': 'off',
+            // new-cap throws errors with property decorators
+            'new-cap': 'off',
+
+            'typescript/adjacent-overload-signatures': 'error',
+            'typescript/class-name-casing': 'error',
+            'typescript/explicit-function-return-type': 'error',
+            'typescript/explicit-member-accessibility': 'error',
+            'typescript/member-delimiter-style': 'error',
+            'typescript/no-angle-bracket-type-assertion': 'error',
+            'typescript/no-array-constructor': 'error',
+            'typescript/no-namespace': 'error',
+            'typescript/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
+            'typescript/member-ordering': 'error',
+            'typescript/no-non-null-assertion': 'error',
+            'typescript/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
+            'typescript/no-triple-slash-reference': 'error',
+            'typescript/type-annotation-spacing': [
+               'error',
+               {
+                  'before': false,
+                  'after': true,
+                  'overrides': {
+                     'arrow': { 'before': true, 'after': true },
+                  },
+               },
+            ],
+         },
+      },
+   ],
 };
