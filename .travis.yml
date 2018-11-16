@@ -4,11 +4,12 @@ node_js:
   - "lts/*" # Latest LTS version
   - "10"
   - "8"
+  - "8.10"
   - "6"
   - "5"
   - "4.3.2"
 
-before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
+before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@6.4.1; fi
 
 script:
    - grunt standards
