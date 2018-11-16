@@ -207,7 +207,7 @@ module.exports = {
       'no-unneeded-ternary': 'error',
       'no-whitespace-before-property': 'error',
       'object-curly-spacing': [ 'error', 'always' ],
-      'one-var': [ 'error', 'always' ],
+      'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       'one-var-declaration-per-line': 'error',
       'quote-props': [ 'error', 'as-needed', { 'keywords': true, 'unnecessary': false } ],
       'quotes': [ 'error', 'single' ],
@@ -220,6 +220,7 @@ module.exports = {
       'space-unary-ops': 'error',
       'unicode-bom': 'error',
 
+      'arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
    },
 
    'overrides': [
@@ -244,6 +245,30 @@ module.exports = {
             'no-unused-vars': 'off',
             // new-cap throws errors with property decorators
             'new-cap': 'off',
+
+            'typescript/adjacent-overload-signatures': 'error',
+            'typescript/class-name-casing': 'error',
+            'typescript/explicit-function-return-type': 'error',
+            'typescript/explicit-member-accessibility': 'error',
+            'typescript/member-delimiter-style': 'error',
+            'typescript/no-angle-bracket-type-assertion': 'error',
+            'typescript/no-array-constructor': 'error',
+            'typescript/no-namespace': 'error',
+            'typescript/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
+            'typescript/member-ordering': 'error',
+            'typescript/no-non-null-assertion': 'error',
+            'typescript/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
+            'typescript/no-triple-slash-reference': 'error',
+            'typescript/type-annotation-spacing': [
+               'error',
+               {
+                  'before': false,
+                  'after': true,
+                  'overrides': {
+                     'arrow': { 'before': true, 'after': true },
+                  },
+               },
+            ],
          },
       },
    ],
