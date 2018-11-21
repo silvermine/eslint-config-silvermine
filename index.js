@@ -250,6 +250,8 @@ module.exports = {
             // new-cap throws errors with property decorators
             'new-cap': 'off',
 
+            'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
+
             'typescript/adjacent-overload-signatures': 'error',
             'typescript/class-name-casing': 'error',
             'typescript/explicit-function-return-type': 'error',
