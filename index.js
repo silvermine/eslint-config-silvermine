@@ -221,6 +221,10 @@ module.exports = {
       'unicode-bom': 'error',
 
       'arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
+      'arrow-parens': 'error',
+
+      'prefer-template': 'error',
+      'template-curly-spacing': [ 'error', 'never' ],
    },
 
    'overrides': [
