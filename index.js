@@ -274,6 +274,7 @@ module.exports = {
                   },
                },
             ],
+            'typescript/no-empty-interface': 'error',
          },
       },
    ],
