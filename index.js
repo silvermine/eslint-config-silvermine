@@ -276,6 +276,10 @@ module.exports = {
                },
             ],
             'typescript/no-empty-interface': 'error',
+
+            // Turn off the core no-use-before-define to avoid double reporting errors.
+            'no-use-before-define': 'off',
+            'typescript/no-use-before-define': [ 'error', { 'functions': false } ],
          },
       },
    ],
