@@ -41,6 +41,7 @@ module.exports = {
       '@silvermine/silvermine/empty-object-spacing': 'error',
       '@silvermine/silvermine/empty-array-spacing': 'error',
       '@silvermine/silvermine/uninitialized-last': 'error',
+      '@silvermine/silvermine/block-scope-case': 'error',
 
       'comma-dangle': [ 'error', 'always-multiline' ],
       'no-unsafe-finally': 'warn',
