@@ -36,7 +36,7 @@ module.exports = {
       '@silvermine/silvermine/fluent-chaining': 'error',
       '@silvermine/silvermine/no-multiple-inline-functions': 'error',
       '@silvermine/silvermine/no-multiline-conditionals': 'error',
-      '@silvermine/silvermine/no-multiline-var-declarations': 'error',
+      '@silvermine/silvermine/no-multiline-var-declarations': [ 'error', { 'const': 'single-only' } ],
       '@silvermine/silvermine/indent': [ 'error', 3, { 'VariableDeclaratorOffset': { 'var': 1, 'let': 1, 'const': 3 }, 'SwitchCase': 1 } ],
       '@silvermine/silvermine/empty-object-spacing': 'error',
       '@silvermine/silvermine/empty-array-spacing': 'error',
