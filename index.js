@@ -260,7 +260,7 @@ module.exports = {
 
             'typescript/adjacent-overload-signatures': 'error',
             'typescript/class-name-casing': 'error',
-            'typescript/explicit-function-return-type': 'error',
+            'typescript/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
             'typescript/explicit-member-accessibility': 'error',
             'typescript/member-delimiter-style': 'error',
             'typescript/no-angle-bracket-type-assertion': 'error',
