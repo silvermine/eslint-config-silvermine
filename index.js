@@ -164,7 +164,11 @@ module.exports = {
          { 'capIsNewExceptions': [ 'Q' ] },
       ],
       'new-parens': 'error',
-      'newline-after-var': 'error',
+      'padding-line-between-statements': [
+         'error',
+         { blankLine: 'always', prev: [ 'var', 'let', 'const' ], next: '*' },
+         { blankLine: 'always', prev: '*', next: 'return' },
+      ],
       'no-array-constructor': 'error',
       'no-bitwise': 'error',
       'no-lonely-if': 'error',
@@ -226,6 +230,8 @@ module.exports = {
 
       'prefer-template': 'error',
       'template-curly-spacing': [ 'error', 'never' ],
+      'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
+
    },
 
    'overrides': [
