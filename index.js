@@ -286,6 +286,15 @@ module.exports = {
             // Turn off the core no-use-before-define to avoid double reporting errors.
             'no-use-before-define': 'off',
             'typescript/no-use-before-define': [ 'error', { 'functions': false } ],
+
+            'typescript/no-type-alias': [
+               'error',
+               {
+                  'allowAliases': 'in-unions-and-intersections',
+                  'allowCallbacks': true,
+                  'allowMappedTypes': true,
+               },
+            ],
          },
       },
    ],
