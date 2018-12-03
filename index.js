@@ -36,11 +36,12 @@ module.exports = {
       '@silvermine/silvermine/fluent-chaining': 'error',
       '@silvermine/silvermine/no-multiple-inline-functions': 'error',
       '@silvermine/silvermine/no-multiline-conditionals': 'error',
-      '@silvermine/silvermine/no-multiline-var-declarations': 'error',
+      '@silvermine/silvermine/no-multiline-var-declarations': [ 'error', { 'const': 'single-only' } ],
       '@silvermine/silvermine/indent': [ 'error', 3, { 'VariableDeclaratorOffset': { 'var': 1, 'let': 1, 'const': 3 }, 'SwitchCase': 1 } ],
       '@silvermine/silvermine/empty-object-spacing': 'error',
       '@silvermine/silvermine/empty-array-spacing': 'error',
       '@silvermine/silvermine/uninitialized-last': 'error',
+      '@silvermine/silvermine/block-scope-case': 'error',
 
       'comma-dangle': [ 'error', 'always-multiline' ],
       'no-unsafe-finally': 'warn',
@@ -114,7 +115,7 @@ module.exports = {
       'no-undef': 'error',
       'no-undef-init': 'error',
       'no-unused-vars': 'error',
-      'no-use-before-define': 'error',
+      'no-use-before-define': [ 'error', { 'functions': false } ],
 
       'callback-return': [ 'error', [ 'callback', 'cb', 'next', 'done' ] ],
       'global-require': 'error',
@@ -163,7 +164,11 @@ module.exports = {
          { 'capIsNewExceptions': [ 'Q' ] },
       ],
       'new-parens': 'error',
-      'newline-after-var': 'error',
+      'padding-line-between-statements': [
+         'error',
+         { blankLine: 'always', prev: [ 'var', 'let', 'const' ], next: '*' },
+         { blankLine: 'always', prev: '*', next: 'return' },
+      ],
       'no-array-constructor': 'error',
       'no-bitwise': 'error',
       'no-lonely-if': 'error',
@@ -221,6 +226,12 @@ module.exports = {
       'unicode-bom': 'error',
 
       'arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
+      'arrow-parens': 'error',
+
+      'prefer-template': 'error',
+      'template-curly-spacing': [ 'error', 'never' ],
+      'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
+
    },
 
    'overrides': [
@@ -242,13 +253,14 @@ module.exports = {
             // The standard ESLint `no-unused-vars' rule will throw false positives with
             // class properties in TypeScript. The TypeScript-specific rule fixes this.
             'typescript/no-unused-vars': 'error',
-            'no-unused-vars': 'off',
             // new-cap throws errors with property decorators
             'new-cap': 'off',
 
+            'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
+
             'typescript/adjacent-overload-signatures': 'error',
             'typescript/class-name-casing': 'error',
-            'typescript/explicit-function-return-type': 'error',
+            'typescript/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
             'typescript/explicit-member-accessibility': 'error',
             'typescript/member-delimiter-style': 'error',
             'typescript/no-angle-bracket-type-assertion': 'error',
@@ -267,6 +279,20 @@ module.exports = {
                   'overrides': {
                      'arrow': { 'before': true, 'after': true },
                   },
+               },
+            ],
+            'typescript/no-empty-interface': 'error',
+
+            // Turn off the core no-use-before-define to avoid double reporting errors.
+            'no-use-before-define': 'off',
+            'typescript/no-use-before-define': [ 'error', { 'functions': false } ],
+
+            'typescript/no-type-alias': [
+               'error',
+               {
+                  'allowAliases': 'in-unions-and-intersections',
+                  'allowCallbacks': true,
+                  'allowMappedTypes': true,
                },
             ],
          },

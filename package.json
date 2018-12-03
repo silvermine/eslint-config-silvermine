@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
   "dependencies": {
-    "@silvermine/eslint-plugin-silvermine": "1.2.1",
-    "eslint-plugin-typescript": "0.13.0",
+    "@silvermine/eslint-plugin-silvermine": "2.0.0-preview.1",
+    "eslint-plugin-typescript": "0.14.0",
     "typescript": "3.0.3",
-    "typescript-eslint-parser": "21.0.1"
+    "typescript-eslint-parser": "17.0.1"
   },
   "devDependencies": {
     "grunt": "1.0.3",
