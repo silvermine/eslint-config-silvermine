@@ -167,7 +167,6 @@ module.exports = {
       'padding-line-between-statements': [
          'error',
          { blankLine: 'always', prev: [ 'var', 'let', 'const' ], next: '*' },
-         { blankLine: 'always', prev: '*', next: 'return' },
       ],
       'no-array-constructor': 'error',
       'no-bitwise': 'error',
@@ -219,7 +218,14 @@ module.exports = {
       'semi': [ 'error', 'always' ],
       'semi-spacing': 'error',
       'space-before-blocks': 'error',
-      'space-before-function-paren': [ 'error', 'never' ],
+      'space-before-function-paren': [
+         'error',
+         {
+            'anonymous': 'never',
+            'named': 'never',
+            'asyncArrow': 'always',
+         },
+      ],
       'space-in-parens': [ 'error', 'never' ],
       'space-infix-ops': 'error',
       'space-unary-ops': 'error',
@@ -228,7 +234,6 @@ module.exports = {
       'arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
       'arrow-parens': 'error',
 
-      'prefer-template': 'error',
       'template-curly-spacing': [ 'error', 'never' ],
       'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
 
@@ -295,6 +300,15 @@ module.exports = {
                   'allowMappedTypes': true,
                },
             ],
+         },
+      },
+      {
+         'files': [ '*.d.ts' ],
+
+         'rules': {
+            'no-unused-vars': 'off',
+            'typescript/no-namespace': 'off',
+            'typescript/no-empty-interface': 'off',
          },
       },
    ],
