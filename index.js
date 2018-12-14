@@ -302,5 +302,14 @@ module.exports = {
             ],
          },
       },
+      {
+         'files': [ '*.d.ts' ],
+
+         'rules': {
+            'no-unused-vars': 'off',
+            'typescript/no-namespace': 'off',
+            'typescript/no-empty-interface': 'off',
+         },
+      },
    ],
 };
