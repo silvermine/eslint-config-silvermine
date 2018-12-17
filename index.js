@@ -213,7 +213,6 @@ module.exports = {
       'object-curly-spacing': [ 'error', 'always' ],
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       'one-var-declaration-per-line': 'error',
-      'quote-props': [ 'error', 'as-needed', { 'keywords': true, 'unnecessary': false } ],
       'quotes': [ 'error', 'single' ],
       'semi': [ 'error', 'always' ],
       'semi-spacing': 'error',
