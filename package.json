@@ -31,6 +31,6 @@
     "grunt-eslint": "21.0.0"
   },
   "peerDependencies": {
-     "eslint": "5.x"
+    "eslint": "5.x"
   }
 }
