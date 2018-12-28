@@ -41,6 +41,8 @@ module.exports = {
       '@silvermine/silvermine/empty-array-spacing': 'error',
       '@silvermine/silvermine/uninitialized-last': 'error',
       '@silvermine/silvermine/block-scope-case': 'error',
+      '@silvermine/silvermine/brace-style': [ 'error', '1tbs', { 'allowSingleLine': false, 'allowSingleLineArrow': true } ],
+
 
       'indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
       'comma-dangle': [ 'error', 'always-multiline' ],
@@ -128,7 +130,6 @@ module.exports = {
 
       'array-bracket-spacing': [ 'error', 'always' ],
       'block-spacing': 'error',
-      'brace-style': 'error',
       'camelcase': 'error',
       'comma-spacing': 'error',
       'comma-style': 'error',
