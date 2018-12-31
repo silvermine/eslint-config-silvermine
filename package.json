@@ -1,6 +1,6 @@
 {
   "name": "@silvermine/eslint-config",
-  "version": "2.0.0-rc2",
+  "version": "2.0.0-rc3",
   "description": "JS Code Standards for all SilverMine projects - eslint enforcement",
   "main": "index.js",
   "scripts": {
