@@ -20,6 +20,10 @@
     "url": "https://github.com/silvermine/eslint-config-silvermine/issues"
   },
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
+  "engines": {
+    "node": ">= 8.10.0",
+    "npm": "6.4.1"
+  },
   "dependencies": {
     "@silvermine/eslint-plugin-silvermine": "2.0.0-preview.1",
     "eslint-plugin-typescript": "0.14.0",
