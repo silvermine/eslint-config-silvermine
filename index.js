@@ -242,7 +242,7 @@ module.exports = {
    'overrides': [
       {
          'files': [ '*.ts' ],
-         'parser': 'typescript-eslint-parser',
+         'parser': 'eslint-plugin-typescript/parser',
          'parserOptions': {
             'sourceType': 'module',
             // Disable warning banner for possibly incompatible versions of TypeScript
@@ -296,8 +296,8 @@ module.exports = {
                'error',
                {
                   'allowAliases': 'in-unions-and-intersections',
-                  'allowCallbacks': true,
-                  'allowMappedTypes': true,
+                  'allowCallbacks': 'always',
+                  'allowMappedTypes': 'always',
                },
             ],
          },
