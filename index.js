@@ -242,7 +242,7 @@ module.exports = {
    'overrides': [
       {
          'files': [ '*.ts' ],
-         'parser': 'typescript-eslint-parser',
+         'parser': 'eslint-plugin-typescript/parser',
          'parserOptions': {
             'sourceType': 'module',
             // Disable warning banner for possibly incompatible versions of TypeScript
@@ -260,6 +260,10 @@ module.exports = {
             'typescript/no-unused-vars': 'error',
             // new-cap throws errors with property decorators
             'new-cap': 'off',
+
+            // TypeScript will be parsed in strict mode and output the `use-strict`
+            // directive for the transpiled JavaScript automatically.
+            'strict': [ 'error', 'never' ],
 
             'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
 
@@ -296,8 +300,8 @@ module.exports = {
                'error',
                {
                   'allowAliases': 'in-unions-and-intersections',
-                  'allowCallbacks': true,
-                  'allowMappedTypes': true,
+                  'allowCallbacks': 'always',
+                  'allowMappedTypes': 'always',
                },
             ],
          },
