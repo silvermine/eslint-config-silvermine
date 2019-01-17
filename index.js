@@ -261,6 +261,10 @@ module.exports = {
             // new-cap throws errors with property decorators
             'new-cap': 'off',
 
+            // TypeScript will be parsed in strict mode and output the `use-strict`
+            // directive for the transpiled JavaScript automatically.
+            'strict': [ 'error', 'never' ],
+
             'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
 
             'typescript/adjacent-overload-signatures': 'error',
