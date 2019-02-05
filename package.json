@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "@silvermine/eslint-plugin-silvermine": "2.1.0",
-    "eslint-plugin-typescript": "1.0.0-rc.2",
-    "typescript": "3.1.1"
+    "@typescript-eslint/eslint-plugin": "1.2.0",
+    "typescript": "3.3.1"
   },
   "devDependencies": {
     "grunt": "1.0.3",
