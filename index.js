@@ -249,6 +249,11 @@ module.exports = {
             'loggerFn': false,
          },
          'rules': {
+            // The standard ESLint `no-dupe-class-members` rule will report false
+            // positives for overloaded TypeScript class methods. This rule is safe to
+            // disable because actual duplicate class members will be caught by the
+            // TypeScript compiler.
+            'no-dupe-class-members': 'off',
             // TODO: figure out how to fix no-undef.
             // Currently, no-undef causes false positives for TypeScript class properties.
             // With TypeScript-only code this rule can safely be disabled because
