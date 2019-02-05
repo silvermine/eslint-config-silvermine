@@ -15,7 +15,7 @@ module.exports = {
 
    'plugins': [
       '@silvermine/eslint-plugin-silvermine', // Our custom rules
-      'typescript', // TypeScript-specific rules
+      '@typescript-eslint', // TypeScript-specific rules
    ],
 
    'parserOptions': {
@@ -242,7 +242,7 @@ module.exports = {
    'overrides': [
       {
          'files': [ '*.ts' ],
-         'parser': 'eslint-plugin-typescript/parser',
+         'parser': '@typescript-eslint/parser',
          'parserOptions': {
             'sourceType': 'module',
             // Disable warning banner for possibly incompatible versions of TypeScript
@@ -262,7 +262,7 @@ module.exports = {
             'no-undef': 'off',
             // The standard ESLint `no-unused-vars' rule will throw false positives with
             // class properties in TypeScript. The TypeScript-specific rule fixes this.
-            'typescript/no-unused-vars': 'error',
+            '@typescript-eslint/no-unused-vars': 'error',
             // new-cap throws errors with property decorators
             'new-cap': 'off',
 
@@ -272,20 +272,20 @@ module.exports = {
 
             'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
 
-            'typescript/adjacent-overload-signatures': 'error',
-            'typescript/class-name-casing': 'error',
-            'typescript/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
-            'typescript/explicit-member-accessibility': 'error',
-            'typescript/member-delimiter-style': 'error',
-            'typescript/no-angle-bracket-type-assertion': 'error',
-            'typescript/no-array-constructor': 'error',
-            'typescript/no-namespace': 'error',
-            'typescript/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
-            'typescript/member-ordering': 'error',
-            'typescript/no-non-null-assertion': 'error',
-            'typescript/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
-            'typescript/no-triple-slash-reference': 'error',
-            'typescript/type-annotation-spacing': [
+            '@typescript-eslint/adjacent-overload-signatures': 'error',
+            '@typescript-eslint/class-name-casing': 'error',
+            '@typescript-eslint/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
+            '@typescript-eslint/explicit-member-accessibility': 'error',
+            '@typescript-eslint/member-delimiter-style': 'error',
+            '@typescript-eslint/no-angle-bracket-type-assertion': 'error',
+            '@typescript-eslint/no-array-constructor': 'error',
+            '@typescript-eslint/no-namespace': 'error',
+            '@typescript-eslint/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
+            '@typescript-eslint/member-ordering': 'error',
+            '@typescript-eslint/no-non-null-assertion': 'error',
+            '@typescript-eslint/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
+            '@typescript-eslint/no-triple-slash-reference': 'error',
+            '@typescript-eslint/type-annotation-spacing': [
                'error',
                {
                   'before': false,
@@ -295,11 +295,11 @@ module.exports = {
                   },
                },
             ],
-            'typescript/no-empty-interface': 'error',
+            '@typescript-eslint/no-empty-interface': 'error',
 
             // Turn off the core no-use-before-define to avoid double reporting errors.
             'no-use-before-define': 'off',
-            'typescript/no-use-before-define': [
+            '@typescript-eslint/no-use-before-define': [
                'error',
                {
                   'functions': false,
@@ -307,7 +307,7 @@ module.exports = {
                },
             ],
 
-            'typescript/no-type-alias': [
+            '@typescript-eslint/no-type-alias': [
                'error',
                {
                   'allowAliases': 'in-unions-and-intersections',
@@ -322,8 +322,8 @@ module.exports = {
 
          'rules': {
             'no-unused-vars': 'off',
-            'typescript/no-namespace': 'off',
-            'typescript/no-empty-interface': 'off',
+            '@typescript-eslint/no-namespace': 'off',
+            '@typescript-eslint/no-empty-interface': 'off',
          },
       },
    ],
