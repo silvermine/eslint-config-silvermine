@@ -25,7 +25,7 @@
     "npm": "6.4.1"
   },
   "dependencies": {
-    "@silvermine/eslint-plugin-silvermine": "2.1.0",
+    "@silvermine/eslint-plugin-silvermine": "2.2.0",
     "@typescript-eslint/eslint-plugin": "1.2.0",
     "typescript": "3.3.1"
   },
