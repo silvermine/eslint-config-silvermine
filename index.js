@@ -42,6 +42,7 @@ module.exports = {
       '@silvermine/silvermine/uninitialized-last': 'error',
       '@silvermine/silvermine/block-scope-case': 'error',
       '@silvermine/silvermine/brace-style': [ 'error', '1tbs', { 'allowSingleLine': false, 'allowSingleLineArrow': true } ],
+      '@silvermine/silvermine/max-statements-per-line': 'error',
 
 
       'indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
@@ -159,7 +160,6 @@ module.exports = {
       ],
       'max-nested-callbacks': [ 'error', 6 ],
       'max-params': [ 'error', 5 ],
-      'max-statements-per-line': 'error',
       'new-cap': [
          'error',
          { 'capIsNewExceptions': [ 'Q' ] },
