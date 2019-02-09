@@ -262,6 +262,7 @@ module.exports = {
             'no-undef': 'off',
             // The standard ESLint `no-unused-vars' rule will throw false positives with
             // class properties in TypeScript. The TypeScript-specific rule fixes this.
+            'no-unused-vars': 'off',
             '@typescript-eslint/no-unused-vars': 'error',
             // new-cap throws errors with property decorators
             'new-cap': 'off',
