@@ -13,4 +13,7 @@ module.exports = {
 
    'extends': './node.js',
 
+   'rules': {
+      'no-empty-function': 'off',
+   },
 };
