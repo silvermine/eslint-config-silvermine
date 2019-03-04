@@ -34,7 +34,8 @@
     "@commitlint/travis-cli": "7.5.2",
     "cz-conventional-changelog": "2.1.0",
     "grunt": "1.0.3",
-    "grunt-eslint": "21.0.0"
+    "grunt-eslint": "21.0.0",
+    "standard-version": "5.0.1"
   },
   "peerDependencies": {
     "eslint": ">= 5.11.1"
