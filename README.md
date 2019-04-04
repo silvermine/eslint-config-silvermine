@@ -1,6 +1,6 @@
 # Silvermine ESLint Rules
 
-[![NPM Version](https://img.shields.io/npm/v/@silvermine/eslint-config-silvermine.svg)](https://www.npmjs.com/package/@silvermine/eslint-config-silvermine)
+[![NPM Version](https://img.shields.io/npm/v/@silvermine/eslint-config.svg)](https://www.npmjs.com/package/@silvermine/eslint-config)
 [![License](https://img.shields.io/github/license/silvermine/eslint-config-silvermine.svg)](./LICENSE)
 [![Build Status](https://travis-ci.org/silvermine/eslint-config-silvermine.svg?branch=master)](https://travis-ci.org/silvermine/eslint-config-silvermine)
 [![Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine.svg)](https://david-dm.org/silvermine/eslint-config-silvermine)
