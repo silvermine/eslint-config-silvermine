@@ -1,5 +1,21 @@
 'use strict';
 
+var VALID_TYPES;
+
+VALID_TYPES = [
+   'build',
+   'chore',
+   'ci',
+   'docs',
+   'feat',
+   'fix',
+   'perf',
+   'refactor',
+   'revert',
+   'style',
+   'test',
+];
+
 module.exports = {
    rules: {
       'body-leading-blank': [ 2, 'always' ],
@@ -8,7 +24,7 @@ module.exports = {
       'footer-max-line-length': [ 2, 'always', 90 ],
       'header-max-length': [ 2, 'always', 72 ],
       'scope-case': [ 2, 'always', [ 'lower-case', 'kebab-case' ] ],
-      'scope-empty': [ 2, 'always' ],
+      'scope-enum': [ 2, 'always', VALID_TYPES ],
       'subject-case': [
          2,
          'never',
@@ -21,19 +37,9 @@ module.exports = {
       'type-enum': [
          2,
          'always',
-         [
-            'build',
-            'chore',
-            'ci',
-            'docs',
-            'feat',
-            'fix',
-            'perf',
-            'refactor',
-            'revert',
-            'style',
-            'test',
-         ],
+         // In addition to the standard types, allow "sub" for commits that support a
+         // larger feature, fix, etc.
+         VALID_TYPES.concat([ 'sub' ]),
       ],
    },
 };
