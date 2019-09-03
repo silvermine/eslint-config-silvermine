@@ -1,6 +1,14 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [2.3.0](https://github.com/silvermine/eslint-config-silvermine/compare/v2.2.1...v2.3.0) (2019-09-03)
+
+
+### Features
+
+* Add 'sub' type ([#49](https://github.com/silvermine/eslint-config-silvermine/issues/49)) ([0e2938e](https://github.com/silvermine/eslint-config-silvermine/commit/0e2938e))
+* Limit scopes to the set of available types ([#49](https://github.com/silvermine/eslint-config-silvermine/issues/49)) ([c9b9b27](https://github.com/silvermine/eslint-config-silvermine/commit/c9b9b27))
 
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/silvermine/eslint-config-silvermine/compare/v2.2.0...v2.2.1) (2019-04-05)
