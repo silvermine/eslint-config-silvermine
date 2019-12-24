@@ -19,10 +19,10 @@ module.exports = {
    ],
 
    'parserOptions': {
-      // Setting the ecmaVersion to 2018 allows ESLint to parse any file that has valid
+      // Setting the ecmaVersion to 2019 allows ESLint to parse any file that has valid
       // syntax, even if we use things like spread and rest syntax. It would be nice to
       // set this to something like 'latest', but you must specify a specific version.
-      'ecmaVersion': 2018,
+      'ecmaVersion': 2019,
    },
 
    'env': {
@@ -46,7 +46,16 @@ module.exports = {
 
 
       'indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
-      'comma-dangle': [ 'error', 'always-multiline' ],
+      'comma-dangle': [
+         'error',
+         {
+            'arrays': 'always-multiline',
+            'objects': 'always-multiline',
+            'imports': 'always-multiline',
+            'exports': 'always-multiline',
+            'functions': 'never',
+         },
+      ],
       'no-unsafe-finally': 'warn',
 
       'array-callback-return': 'error',
@@ -54,13 +63,17 @@ module.exports = {
       'complexity': 'error',
       'curly': 'error',
       'default-case': 'error',
+      'default-param-last': 'error',
       'dot-location': [ 'error', 'property' ],
       'dot-notation': 'error',
       'eqeqeq': 'error',
+      'grouped-accessor-pairs': [ 'error', 'getBeforeSet' ],
       'guard-for-in': 'error',
       'no-alert': 'error',
       'no-caller': 'error',
       'no-case-declarations': 'error',
+      'no-console': 'error',
+      'no-constructor-return': 'error',
       'no-else-return': 'error',
       'no-empty-function': 'error',
       'no-empty-pattern': 'error',
@@ -72,7 +85,7 @@ module.exports = {
       'no-fallthrough': 'error',
       'no-floating-decimal': 'error',
       'no-implicit-coercion': [ 'error', { 'allow': [ '!!' ] } ],
-      'no-implicit-globals': 'error',
+      'no-implicit-globals': [ 'error', { 'lexicalBindings': true } ],
       'no-implied-eval': 'error',
       'no-iterator': 'error',
       'no-labels': 'error',
@@ -80,7 +93,6 @@ module.exports = {
       'no-loop-func': 'error',
       'no-multi-spaces': 'error',
       'no-multi-str': 'error',
-      'no-native-reassign': 'error',
       'no-new': 'error',
       'no-new-func': 'error',
       'no-new-wrappers': 'error',
@@ -109,11 +121,10 @@ module.exports = {
 
       'strict': 'error',
 
-      'no-catch-shadow': 'error',
+      'no-shadow': 'error',
       'no-delete-var': 'error',
       'no-label-var': 'error',
       'no-restricted-globals': [ 'error', 'event' ],
-      'no-shadow': 'error',
       'no-shadow-restricted-names': 'error',
       'no-undef': 'error',
       'no-undef-init': 'error',
@@ -169,8 +180,11 @@ module.exports = {
          'error',
          { blankLine: 'always', prev: [ 'var', 'let', 'const' ], next: '*' },
       ],
+      'prefer-regex-literals': 'error',
       'no-array-constructor': 'error',
       'no-bitwise': 'error',
+      'no-import-assign': 'error',
+      'no-dupe-else-if': 'error',
       'no-lonely-if': 'error',
       'no-multiple-empty-lines': [
          'error',
@@ -207,7 +221,8 @@ module.exports = {
          'WithStatement',
          'YieldExpression',
       ],
-      'no-spaced-func': 'error',
+      'no-setter-return': 'error',
+      'func-call-spacing': 'error',
       'no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
       'no-whitespace-before-property': 'error',
@@ -231,6 +246,7 @@ module.exports = {
       'space-unary-ops': 'error',
       'unicode-bom': 'error',
 
+      'arrow-body-style': [ 'error', 'always' ],
       'arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
       'arrow-parens': 'error',
 
@@ -280,14 +296,14 @@ module.exports = {
             '@typescript-eslint/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
             '@typescript-eslint/explicit-member-accessibility': 'error',
             '@typescript-eslint/member-delimiter-style': 'error',
-            '@typescript-eslint/no-angle-bracket-type-assertion': 'error',
+            '@typescript-eslint/consistent-type-assertions': [ 'error', { 'assertionStyle': 'as' } ],
             '@typescript-eslint/no-array-constructor': 'error',
             '@typescript-eslint/no-namespace': 'error',
             '@typescript-eslint/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
             '@typescript-eslint/member-ordering': 'error',
             '@typescript-eslint/no-non-null-assertion': 'error',
             '@typescript-eslint/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
-            '@typescript-eslint/no-triple-slash-reference': 'error',
+            '@typescript-eslint/triple-slash-reference': [ 'error', { 'path': 'never', 'types': 'never', 'lib': 'never' } ],
             '@typescript-eslint/type-annotation-spacing': [
                'error',
                {
