@@ -26,8 +26,8 @@
     "npm": "6.4.1"
   },
   "dependencies": {
-    "@silvermine/eslint-plugin-silvermine": "2.2.1",
-    "@typescript-eslint/eslint-plugin": "1.2.0",
+    "@silvermine/eslint-plugin-silvermine": "git+https://github.com/silvermine/eslint-plugin-silvermine.git#9a6e324f951fe89d5b6b115a5881cd6ff14b5f96",
+    "@typescript-eslint/eslint-plugin": "2.13.0",
     "typescript": "3.3.1"
   },
   "devDependencies": {
@@ -35,11 +35,11 @@
     "@commitlint/travis-cli": "7.5.2",
     "cz-conventional-changelog": "2.1.0",
     "grunt": "1.0.3",
-    "grunt-eslint": "21.0.0",
+    "grunt-eslint": "22.0.0",
     "standard-version": "7.0.0"
   },
   "peerDependencies": {
-    "eslint": ">= 5.11.1"
+    "eslint": ">= 6.0.0"
   },
   "config": {
     "commitizen": {
