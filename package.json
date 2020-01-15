@@ -4,7 +4,7 @@
   "description": "JS Code Standards for all SilverMine projects - eslint enforcement",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\"",
+    "test": "check-node-version --npm 6.13.4",
     "release": "standard-version"
   },
   "repository": {
@@ -23,16 +23,17 @@
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
   "dependencies": {
     "@silvermine/eslint-plugin-silvermine": "git+https://github.com/silvermine/eslint-plugin-silvermine.git#9a6e324f951fe89d5b6b115a5881cd6ff14b5f96",
-    "@typescript-eslint/eslint-plugin": "2.13.0",
+    "@typescript-eslint/eslint-plugin": "2.16.0",
     "typescript": "3.3.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "7.5.2",
-    "@commitlint/travis-cli": "7.5.2",
-    "cz-conventional-changelog": "2.1.0",
-    "grunt": "1.0.3",
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/travis-cli": "8.3.5",
+    "check-node-version": "4.0.2",
+    "cz-conventional-changelog": "3.0.2",
+    "grunt": "1.0.4",
     "grunt-eslint": "22.0.0",
-    "standard-version": "7.0.0"
+    "standard-version": "7.0.1"
   },
   "peerDependencies": {
     "eslint": ">= 6.0.0"
