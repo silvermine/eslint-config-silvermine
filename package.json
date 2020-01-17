@@ -24,6 +24,7 @@
   "dependencies": {
     "@silvermine/eslint-plugin-silvermine": "git+https://github.com/silvermine/eslint-plugin-silvermine.git#9a6e324f951fe89d5b6b115a5881cd6ff14b5f96",
     "@typescript-eslint/eslint-plugin": "2.16.0",
+    "@typescript-eslint/parser": "2.16.0",
     "typescript": "3.3.1"
   },
   "devDependencies": {
