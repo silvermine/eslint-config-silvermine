@@ -6,6 +6,7 @@ VALID_TYPES = [
    'build',
    'chore',
    'ci',
+   'config',
    'docs',
    'feat',
    'fix',
