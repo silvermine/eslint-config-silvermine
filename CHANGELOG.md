@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+## [3.0.0-rc.0](https://github.com/silvermine/eslint-config-silvermine/compare/v2.3.0...v3.0.0-rc.0) (2020-01-22)
+
+Marked as a major release because this version of the config relies on eslint@6. Previous
+versions relied on eslint@5. We're also using a newer version of node and NPM now,
+although that should not impact users.
+
+### Features
+
+* Remove no-restricted-syntax for JSX ([f380c41](https://github.com/silvermine/eslint-config-silvermine/commit/f380c41220d7fc7222499c6c9b09fa33f16b0462))
+* upgrade @silvermine/eslint-plugin for eslint 6 upgrade ([f24f857](https://github.com/silvermine/eslint-config-silvermine/commit/f24f8573490878b72bec47fae9240e82732973a4))
+
+
+### Bug Fixes
+
+* add config type to valid commitlint types ([#61](https://github.com/silvermine/eslint-config-silvermine/issues/61)) ([3229252](https://github.com/silvermine/eslint-config-silvermine/commit/322925295abe4c29e7cecdaf1b39cb91c43e9d9c))
+
+
 ## [2.3.0](https://github.com/silvermine/eslint-config-silvermine/compare/v2.2.1...v2.3.0) (2019-09-03)
 
 
