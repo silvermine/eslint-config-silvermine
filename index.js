@@ -179,6 +179,7 @@ module.exports = {
             'code': 140,
             'comments': 90,
             'ignoreUrls': true,
+            'ignorePattern': '^\\s*((async|export|default|async|public|private|protected|function) )+.*\\{', // function declaration lines
          },
       ],
       'max-nested-callbacks': [ 'error', 6 ],
