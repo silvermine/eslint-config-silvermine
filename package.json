@@ -34,7 +34,7 @@
     "cz-conventional-changelog": "3.0.2",
     "grunt": "1.0.4",
     "grunt-eslint": "22.0.0",
-    "standard-version": "7.0.1"
+    "standard-version": "8.0.1"
   },
   "peerDependencies": {
     "eslint": ">= 6.0.0"
