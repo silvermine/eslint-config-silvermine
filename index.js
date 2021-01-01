@@ -285,14 +285,12 @@ module.exports = {
             'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
 
             '@typescript-eslint/adjacent-overload-signatures': 'error',
-            '@typescript-eslint/class-name-casing': 'error',
             '@typescript-eslint/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
             '@typescript-eslint/explicit-member-accessibility': 'error',
             '@typescript-eslint/member-delimiter-style': 'error',
             '@typescript-eslint/consistent-type-assertions': [ 'error', { 'assertionStyle': 'as' } ],
             '@typescript-eslint/no-array-constructor': 'error',
             '@typescript-eslint/no-namespace': 'error',
-            '@typescript-eslint/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
             '@typescript-eslint/member-ordering': 'error',
             '@typescript-eslint/no-non-null-assertion': 'error',
             '@typescript-eslint/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
@@ -316,6 +314,58 @@ module.exports = {
                {
                   'functions': false,
                   'typedefs': false,
+               },
+            ],
+
+            '@typescript-eslint/no-type-alias': [
+               'error',
+               {
+                  'allowAliases': 'in-unions-and-intersections',
+                  'allowCallbacks': 'always',
+                  'allowMappedTypes': 'always',
+               },
+            ],
+
+            // Disable ESLint's camelcase so we can override with our own
+            // naming convention rules.
+            'camelcase': 'off',
+
+            '@typescript-eslint/naming-convention': [
+               'error',
+               {
+                  selector: 'default',
+                  format: [ 'camelCase' ],
+               },
+               {
+                  selector: 'variable',
+                  format: [ 'camelCase', 'UPPER_CASE' ],
+               },
+               {
+                  selector: 'parameter',
+                  format: [ 'camelCase' ],
+                  leadingUnderscore: 'allow',
+               },
+               {
+                  selector: 'memberLike',
+                  modifiers: [ 'private' ],
+                  format: [ 'camelCase', 'snake_case' ],
+                  leadingUnderscore: 'require',
+               },
+               {
+                  selector: 'typeLike',
+                  format: [ 'PascalCase' ],
+               },
+               {
+                  selector: 'memberLike',
+                  format: [ 'snake_case' ],
+                  leadingUnderscore: 'forbid',
+                  modifiers: [ 'static', 'public' ],
+               },
+               {
+                  selector: 'memberLike',
+                  format: [ 'snake_case' ],
+                  modifiers: [ 'static', 'private' ],
+                  leadingUnderscore: 'require',
                },
             ],
          },
