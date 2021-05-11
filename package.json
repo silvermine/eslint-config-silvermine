@@ -4,7 +4,7 @@
   "description": "JS Code Standards for all SilverMine projects - eslint enforcement",
   "main": "index.js",
   "scripts": {
-    "test": "check-node-version --npm 6.13.4",
+    "test": "check-node-version --npm 6.14.12",
     "release": "standard-version"
   },
   "repository": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
   "dependencies": {
-    "@silvermine/eslint-plugin-silvermine": "2.3.0-rc.1",
+    "@silvermine/eslint-plugin-silvermine": "2.3.1",
     "@typescript-eslint/eslint-plugin": "2.16.0",
     "@typescript-eslint/parser": "2.16.0",
     "typescript": "3.3.1"
