@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0-beta.0](https://github.com/silvermine/eslint-config-silvermine/compare/v3.0.1...v3.1.0-beta.0) (2021-11-11)
+
+
+### Features
+
+* add linting rules for Vue components ([2a18ccb](https://github.com/silvermine/eslint-config-silvermine/commit/2a18ccb210febd29fa0675c888f360e839f7dd9f))
 
 ## [3.0.0-rc.0](https://github.com/silvermine/eslint-config-silvermine/compare/v2.3.0...v3.0.0-rc.0) (2020-01-22)
 
