@@ -324,15 +324,6 @@ module.exports = {
                   'typedefs': false,
                },
             ],
-
-            '@typescript-eslint/no-type-alias': [
-               'error',
-               {
-                  'allowAliases': 'in-unions-and-intersections',
-                  'allowCallbacks': 'always',
-                  'allowMappedTypes': 'always',
-               },
-            ],
          },
       },
       {
