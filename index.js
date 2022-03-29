@@ -69,7 +69,10 @@ module.exports = {
       'default-case': 'error',
       'default-param-last': 'error',
       'dot-location': [ 'error', 'property' ],
-      'dot-notation': 'error',
+      'dot-notation': [
+         'error',
+         { 'allowPattern': '^[a-z]+(_[a-z]+)+$' }, // Allow obj['snake_case']
+      ],
       'eqeqeq': 'error',
       'grouped-accessor-pairs': [ 'error', 'getBeforeSet' ],
       'guard-for-in': 'error',
@@ -285,14 +288,33 @@ module.exports = {
             'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
 
             '@typescript-eslint/adjacent-overload-signatures': 'error',
-            '@typescript-eslint/class-name-casing': 'error',
+            '@typescript-eslint/naming-convention': [
+               'error',
+               {
+                  'selector': [ 'classProperty', 'classMethod' ],
+                  'modifiers': [ 'private', 'protected' ],
+                  'leadingUnderscore': 'require',
+                  'format': [ 'camelCase' ],
+               },
+               {
+                  'selector': [ 'class', 'interface' ],
+                  'format': [ 'PascalCase' ],
+               },
+            ],
+            // no-shadow is incompatible with TypeScript code.
+            // @typescript-eslint/no-shadow replaces it.
+            'no-shadow': 'off',
+            '@typescript-eslint/no-shadow': 'error',
+            // no-redeclare is incompatible with TypeScript code.
+            // @typescript-eslint/no-redeclare replaces it.
+            'no-redeclare': 'off',
+            '@typescript-eslint/no-redeclare': [ 'error' ],
             '@typescript-eslint/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
             '@typescript-eslint/explicit-member-accessibility': 'error',
             '@typescript-eslint/member-delimiter-style': 'error',
             '@typescript-eslint/consistent-type-assertions': [ 'error', { 'assertionStyle': 'as' } ],
             '@typescript-eslint/no-array-constructor': 'error',
             '@typescript-eslint/no-namespace': 'error',
-            '@typescript-eslint/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
             '@typescript-eslint/member-ordering': 'error',
             '@typescript-eslint/no-non-null-assertion': 'error',
             '@typescript-eslint/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
