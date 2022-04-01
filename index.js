@@ -315,7 +315,69 @@ module.exports = {
             '@typescript-eslint/consistent-type-assertions': [ 'error', { 'assertionStyle': 'as' } ],
             '@typescript-eslint/no-array-constructor': 'error',
             '@typescript-eslint/no-namespace': 'error',
-            '@typescript-eslint/member-ordering': 'error',
+            '@typescript-eslint/member-ordering': [
+               'error',
+               {
+                  'default': [
+                     // Index signature
+                     'signature',
+                     'call-signature',
+
+                     // Fields
+                     'public-static-field',
+                     'protected-static-field',
+                     'private-static-field',
+
+                     'public-instance-field',
+                     'protected-instance-field',
+                     'private-instance-field',
+
+                     'public-abstract-field',
+                     'protected-abstract-field',
+                     'private-abstract-field',
+
+                     'public-field',
+                     'protected-field',
+                     'private-field',
+
+                     'static-field',
+                     'instance-field',
+                     'abstract-field',
+
+                     'field',
+
+                     // Constructors
+                     'public-constructor',
+                     'protected-constructor',
+                     'private-constructor',
+
+                     'constructor',
+
+                     // Methods
+                     [ 'public-static-method', 'public-static-get', 'public-static-set' ],
+                     [ 'protected-static-method', 'protected-static-get', 'protected-static-set' ],
+                     [ 'private-static-method', 'private-static-get', 'private-static-set' ],
+
+                     [ 'public-instance-method', 'public-instance-get', 'public-instance-set' ],
+                     [ 'protected-instance-method', 'protected-instance-get', 'protected-instance-set' ],
+                     [ 'private-instance-method', 'private-instance-get', 'private-instance-set' ],
+
+                     [ 'public-abstract-method', 'public-abstract-get', 'public-abstract-set' ],
+                     [ 'protected-abstract-method', 'protected-abstract-get', 'protected-abstract-set' ],
+                     [ 'private-abstract-method', 'private-abstract-get', 'private-abstract-set' ],
+
+                     'public-method',
+                     'protected-method',
+                     'private-method',
+
+                     [ 'static-method', 'static-get', 'static-set' ],
+                     [ 'instance-method', 'instance-get', 'instance-set' ],
+                     [ 'abstract-method', 'abstract-get', 'abstract-set' ],
+
+                     'method',
+                  ],
+               },
+            ],
             '@typescript-eslint/no-non-null-assertion': 'error',
             '@typescript-eslint/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
             '@typescript-eslint/triple-slash-reference': [ 'error', { 'path': 'never', 'types': 'never', 'lib': 'never' } ],
