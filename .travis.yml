@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-  - "node" # Latest node version
+  # TODO: Restore pipeline for latest Node.js when Travis fixes dependency issue
+  # https://travis-ci.community/t/the-command-npm-config-set-spin-false-failed-and-exited-with-1-during/12909
+  # - "node" # Latest node version
   - "lts/*" # Latest LTS version
   - "14"
   - "12"

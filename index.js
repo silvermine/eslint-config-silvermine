@@ -69,7 +69,10 @@ module.exports = {
       'default-case': 'error',
       'default-param-last': 'error',
       'dot-location': [ 'error', 'property' ],
-      'dot-notation': 'error',
+      'dot-notation': [
+         'error',
+         { 'allowPattern': '^[a-z]+(_[a-z]+)+$' }, // Allow obj['snake_case']
+      ],
       'eqeqeq': 'error',
       'grouped-accessor-pairs': [ 'error', 'getBeforeSet' ],
       'guard-for-in': 'error',
@@ -285,15 +288,96 @@ module.exports = {
             'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
 
             '@typescript-eslint/adjacent-overload-signatures': 'error',
-            '@typescript-eslint/class-name-casing': 'error',
+            '@typescript-eslint/naming-convention': [
+               'error',
+               {
+                  'selector': [ 'classProperty', 'classMethod' ],
+                  'modifiers': [ 'private', 'protected' ],
+                  'leadingUnderscore': 'require',
+                  'format': [ 'camelCase' ],
+               },
+               {
+                  'selector': [ 'class', 'interface' ],
+                  'format': [ 'PascalCase' ],
+               },
+            ],
+            // no-shadow is incompatible with TypeScript code.
+            // @typescript-eslint/no-shadow replaces it.
+            'no-shadow': 'off',
+            '@typescript-eslint/no-shadow': 'error',
+            // no-redeclare is incompatible with TypeScript code.
+            // @typescript-eslint/no-redeclare replaces it.
+            'no-redeclare': 'off',
+            '@typescript-eslint/no-redeclare': [ 'error' ],
             '@typescript-eslint/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
             '@typescript-eslint/explicit-member-accessibility': 'error',
             '@typescript-eslint/member-delimiter-style': 'error',
             '@typescript-eslint/consistent-type-assertions': [ 'error', { 'assertionStyle': 'as' } ],
             '@typescript-eslint/no-array-constructor': 'error',
             '@typescript-eslint/no-namespace': 'error',
-            '@typescript-eslint/member-naming': [ 'error', { 'private': '^_', 'protected': '^_' } ],
-            '@typescript-eslint/member-ordering': 'error',
+            '@typescript-eslint/member-ordering': [
+               'error',
+               {
+                  'default': [
+                     // Index signature
+                     'signature',
+                     'call-signature',
+
+                     // Fields
+                     'public-static-field',
+                     'protected-static-field',
+                     'private-static-field',
+
+                     'public-instance-field',
+                     'protected-instance-field',
+                     'private-instance-field',
+
+                     'public-abstract-field',
+                     'protected-abstract-field',
+                     'private-abstract-field',
+
+                     'public-field',
+                     'protected-field',
+                     'private-field',
+
+                     'static-field',
+                     'instance-field',
+                     'abstract-field',
+
+                     'field',
+
+                     // Constructors
+                     'public-constructor',
+                     'protected-constructor',
+                     'private-constructor',
+
+                     'constructor',
+
+                     // Methods
+                     [ 'public-static-method', 'public-static-get', 'public-static-set' ],
+                     [ 'protected-static-method', 'protected-static-get', 'protected-static-set' ],
+                     [ 'private-static-method', 'private-static-get', 'private-static-set' ],
+
+                     [ 'public-instance-method', 'public-instance-get', 'public-instance-set' ],
+                     [ 'protected-instance-method', 'protected-instance-get', 'protected-instance-set' ],
+                     [ 'private-instance-method', 'private-instance-get', 'private-instance-set' ],
+
+                     [ 'public-abstract-method', 'public-abstract-get', 'public-abstract-set' ],
+                     [ 'protected-abstract-method', 'protected-abstract-get', 'protected-abstract-set' ],
+                     [ 'private-abstract-method', 'private-abstract-get', 'private-abstract-set' ],
+
+                     'public-method',
+                     'protected-method',
+                     'private-method',
+
+                     [ 'static-method', 'static-get', 'static-set' ],
+                     [ 'instance-method', 'instance-get', 'instance-set' ],
+                     [ 'abstract-method', 'abstract-get', 'abstract-set' ],
+
+                     'method',
+                  ],
+               },
+            ],
             '@typescript-eslint/no-non-null-assertion': 'error',
             '@typescript-eslint/no-parameter-properties': [ 'error', { 'allows': [ 'private' ] } ],
             '@typescript-eslint/triple-slash-reference': [ 'error', { 'path': 'never', 'types': 'never', 'lib': 'never' } ],
@@ -338,6 +422,7 @@ module.exports = {
             sourceType: 'module',
          },
          env: {
+            'vue/setup-compiler-macros': true,
             browser: true,
          },
          rules: getVueRules(3),

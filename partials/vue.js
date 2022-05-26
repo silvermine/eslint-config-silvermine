@@ -9,13 +9,10 @@ const vueRulesBase = require('eslint-plugin-vue/lib/configs/base').rules,
 
 
 const silvermineRulesUniversal = {
-   // The 'no-unused-vars' rules does not work with type definitions in .vue
-   // files.
-   'no-unused-vars': 'off',
-
    // Priority B: Strongly Recommended
    'vue/attribute-hyphenation': [ 'error', 'never' ],
    'vue/component-definition-name-casing': [ 'error', 'PascalCase' ],
+   'vue/first-attribute-linebreak': [ 'error', { 'multiline': 'ignore' } ],
    'vue/html-closing-bracket-newline': [
       'error',
       {
@@ -177,7 +174,8 @@ const silvermineRulesVue2Only = {};
 
 const silvermineRulesVue3Only = {
    'vue/no-deprecated-v-is': 'error',
-   // 'vue/v-on-event-hyphenation': 'TODO',
+   'vue/multi-word-component-names': 'off',
+   'vue/v-on-event-hyphenation': [ 'error', 'never' ],
 };
 
 module.exports = {

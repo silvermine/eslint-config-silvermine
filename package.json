@@ -23,21 +23,21 @@
   },
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
   "dependencies": {
-    "@silvermine/eslint-plugin-silvermine": "2.3.1",
-    "@typescript-eslint/eslint-plugin": "2.16.0",
-    "@typescript-eslint/parser": "2.16.0",
-    "eslint-plugin-vue": "7.11.1",
-    "typescript": "3.3.1"
+    "@silvermine/eslint-plugin-silvermine": "git+https://github.com/silvermine/eslint-plugin-silvermine.git#c2789dc8baeb9003c7a1f8b3c6ddcb0201ae9796",
+    "@typescript-eslint/eslint-plugin": "5.17.0",
+    "@typescript-eslint/parser": "5.17.0",
+    "eslint-plugin-vue": "8.7.1",
+    "typescript": "4.6.3"
   },
   "devDependencies": {
     "@silvermine/standardization": "1.2.0",
     "cz-conventional-changelog": "3.0.2",
     "grunt": "1.4.0",
-    "grunt-eslint": "22.0.0",
+    "grunt-eslint": "24.0.0",
     "standard-version": "7.0.1"
   },
   "peerDependencies": {
-    "eslint": ">= 6.0.0"
+    "eslint": ">= 8.0.0"
   },
   "config": {
     "commitizen": {
