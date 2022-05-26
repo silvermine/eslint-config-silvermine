@@ -22,23 +22,23 @@ types of errors this protects us from.
 
 In addition to the ESLint rules, this package provides configuration for the following:
 
- * [EditorConfig](https://editorconfig.org/)
-   * Provides a default set of editor configuration values to use in Silvermine projects
-   * Usage: Symlink the .editorconfig file to the root of your project and use the
-     appropriate extension for your editor.
+   * [EditorConfig](https://editorconfig.org/)
+      * Provides a default set of editor configuration values to use in Silvermine projects
+      * Usage: Symlink the .editorconfig file to the root of your project and use the
+        appropriate extension for your editor.
       * `ln -s ./node_modules/@silvermine/eslint-config/.editorconfig`
-* [commitlint](https://conventional-changelog.github.io/commitlint/)
-  * Provides linting for commit messages of Silvermine projects
-  * Usage: Add a `commitlint.config.js` file to the root of the project with the
-    following and then set up commitlint in the project:
-    ```javascript
-    'use strict';
+   * [commitlint](https://conventional-changelog.github.io/commitlint/)
+      * Provides linting for commit messages of Silvermine projects
+      * Usage: Add a `commitlint.config.js` file to the root of the project with the
+        following and then set up commitlint in the project:
 
-    module.exports = {
-       extends: [ '@silvermine/eslint-config/commitlint' ],
-    };
-    ```
+        ```javascript
+        'use strict';
 
+        module.exports = {
+           extends: [ '@silvermine/eslint-config/commitlint' ],
+        };
+        ```
 
 
 ## Notes on Semantic Versioning

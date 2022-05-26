@@ -1,4 +1,5 @@
 node_modules
 
-# Visual Studio Code
+# Editor files
 .vscode
+.idea
