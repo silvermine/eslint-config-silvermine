@@ -62,6 +62,28 @@ When choosing which version of this config to use, consider the following:
       * The v1.x.x branch is not recommended for use in new projects and will only be
         minimally updated with bug fixes to support legacy code.
 
+## Updating ESLint
+
+Updating ESLint in this project requires multiple steps across both this project and
+[@silvermine/eslint-plugin](https://github.com/silvermine/eslint-plugin-silvermine):
+
+1. Open a PR to update ESLint in @silvermine/eslint-plugin
+   * Note: Linting in the @silvermine/eslint-plugin PR will likely fail because
+    @silvermine/eslint-plugin's version of @silvermine/eslint-config is incompatible with
+    the new version of ESLint. That's ok. We will fix it soon in a subsequent step.
+2. After the PR from step 1 is merged, update @silvermine/eslint-plugin in
+   @silvermine/eslint-config using a `git+https` + git hash URL. The git hash should point
+   to the commit in @silvermine/eslint-plugin where you updated ESLint.
+3. Update ESLint in @silvermine/eslint-config. Open a PR that contains this update and
+   the @silvermine/eslint-plugin update from step 2.
+      * Note: All of the linting and tests in this build should pass.
+4. Publish a new version of @silvermine/eslint-config to the NPM registry
+5. Update @silvermine/eslint-config in @silvermine/eslint-plugin to the version that was
+   just published
+      * Note: All of the linting and tests in this build should now pass.
+6. Publish a new version of @silvermine/eslint-plugin to the NPM registry
+7. Update @silvermine/eslint-plugin in @silvermine/eslint-config using the version that was
+   just published
 
 ## License
 
