@@ -1,6 +1,19 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [our coding standards][commit-messages] for commit guidelines.
+
+## [3.1.0-beta.1](https://github.com/silvermine/eslint-config-silvermine/compare/v3.1.0-beta.0...v3.1.0-beta.1) (2022-05-26)
+
+
+### Features
+
+* Add `vue/setup-compiler-macros` environment setting ([90b1e78](https://github.com/silvermine/eslint-config-silvermine/commit/90b1e78f91d7a9ed7b24928f5d192e05ff293eb7))
+* Add separate eslint config for Vue2 code ([1957b57](https://github.com/silvermine/eslint-config-silvermine/commit/1957b57b710cd4772e2484b2493738194ce3fcd9))
+* Adjust rules for Vue 3 ([cc24d4b](https://github.com/silvermine/eslint-config-silvermine/commit/cc24d4b5c42d6873471339adc793d9384f6ff392))
+* Allow TypeScript type aliases ([#73](https://github.com/silvermine/eslint-config-silvermine/issues/73)) ([6f2a10c](https://github.com/silvermine/eslint-config-silvermine/commit/6f2a10c407299bc1369532db1391892224785198))
+* Override member-ordering rule ([e9fc7a9](https://github.com/silvermine/eslint-config-silvermine/commit/e9fc7a9f3c9ce6717d86f212736860bd3f2c27a6))
+
 
 ## [3.1.0-beta.0](https://github.com/silvermine/eslint-config-silvermine/compare/v3.0.1...v3.1.0-beta.0) (2021-11-11)
 
@@ -71,3 +84,5 @@ although that should not impact users.
 Version 2.0.0 was a major "rethink" of our rules, changing some past decisions, but
 primarily focusing on what we needed to change to add support for newer ES* features and
 TypeScript.
+
+[commit-messages]: https://github.com/silvermine/silvermine-info/blob/master/commit-history.md#commit-messages
