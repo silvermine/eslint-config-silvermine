@@ -16,6 +16,11 @@ module.exports = {
 
    'extends': 'eslint:recommended',
 
+   // ESLint by default ignore directories with dot prefixes. Some of our projects use
+   // Vuepress which maintains its source code in a `.vuepress` directory. This negated
+   // ignore pattern enables linting for any projects using our config.
+   'ignorePatterns': [ '!.vuepress' ],
+
    'plugins': [
       '@silvermine/eslint-plugin-silvermine', // Our custom rules
       '@typescript-eslint', // TypeScript-specific rules
