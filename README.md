@@ -18,6 +18,21 @@ Shareable [ESLint](http://eslint.org/) configuration for all Silvermine projects
 Because we need it. Whitespace errors are evil. As are the other hundreds of
 types of errors this protects us from.
 
+## Running ESLint
+
+It is recommended to run ESLint via a NPM script in `package.json` with the command
+`eslint .` for  projects that use this configuration.
+
+Example:
+
+```json
+{
+   "scripts": {
+      "eslint": "eslint ."
+   }
+}
+```
+
 ## Other Configuration Files Available
 
 In addition to the ESLint rules, this package provides configuration for the following:
