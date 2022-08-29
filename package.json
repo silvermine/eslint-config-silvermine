@@ -29,13 +29,13 @@
   },
   "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
   "dependencies": {
+    "@silvermine/eslint-plugin-silvermine": "2.4.0",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
     "eslint-plugin-vue": "8.7.1",
     "typescript": "4.6.3"
   },
   "devDependencies": {
-    "@silvermine/eslint-plugin-silvermine": "2.4.0",
     "@silvermine/standardization": "2.0.0",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "8.16.0",
