@@ -4,7 +4,7 @@
   "description": "JS Code Standards for all SilverMine projects - eslint enforcement",
   "main": "index.js",
   "scripts": {
-    "test": "check-node-version --npm 6.14.12",
+    "test": "check-node-version --npm 8.5.5",
     "release": "standard-version",
     "commitlint": "commitlint --from ee3b407",
     "eslint": "eslint '{,!(node_modules|dist)/**/}*.js'",
