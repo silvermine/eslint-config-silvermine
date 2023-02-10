@@ -9,7 +9,7 @@
     "commitlint": "commitlint --from ee3b407",
     "eslint": "eslint '{,!(node_modules|dist)/**/}*.js'",
     "markdownlint": "markdownlint -c .markdownlint.json -i CHANGELOG.md '{,!(node_modules)/**/}*.md'",
-    "standards": "npm run markdownlint && npm run eslint",
+    "standards": "npm run commitlint && npm run markdownlint && npm run eslint",
     "release:preview": "node ./node_modules/@silvermine/standardization/scripts/release.js preview",
     "release:prep-changelog": "node ./node_modules/@silvermine/standardization/scripts/release.js prep-changelog",
     "release:finalize": "node ./node_modules/@silvermine/standardization/scripts/release.js finalize"
