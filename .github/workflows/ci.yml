@@ -14,7 +14,7 @@ jobs:
             uses: actions/setup-node@v3
             with:
                node-version-file: '.nvmrc'
-         - run: npm i -g npm@6.14.12
+         - run: npm i -g npm@8.5.5
          - run: npm ci
          - run: npm run standards
    test:
@@ -31,6 +31,6 @@ jobs:
             uses: actions/setup-node@v3
             with:
                node-version: ${{ matrix.node-version }}
-         - run: npm i -g npm@6.14.12
+         - run: npm i -g npm@8.5.5
          - run: npm ci # Reinstall the dependencies to ensure they install with the current version of node
          - run: npm test
