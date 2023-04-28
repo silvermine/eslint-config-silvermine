@@ -42,6 +42,7 @@ const silvermineRulesUniversal = {
    'vue/html-quotes': [ 'error', 'double' ],
    'vue/html-self-closing': 'error',
    'vue/max-attributes-per-line': 'off',
+   'vue/multi-word-component-names': 'off',
    'vue/multiline-html-element-content-newline': 'error',
    'vue/mustache-interpolation-spacing': 'error',
    'vue/no-multi-spaces': 'error',
@@ -174,7 +175,6 @@ const silvermineRulesVue2Only = {};
 
 const silvermineRulesVue3Only = {
    'vue/no-deprecated-v-is': 'error',
-   'vue/multi-word-component-names': 'off',
    'vue/v-on-event-hyphenation': [ 'error', 'never' ],
 };
 
