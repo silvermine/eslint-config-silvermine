@@ -293,17 +293,64 @@ module.exports = {
             'no-empty-function': [ 'error', { 'allow': [ 'constructors' ] } ],
 
             '@typescript-eslint/adjacent-overload-signatures': 'error',
+
+            // Disable ESLint's camelcase so we can override with our own
+            // naming convention rules.
+            'camelcase': 'off',
+
             '@typescript-eslint/naming-convention': [
                'error',
                {
-                  'selector': [ 'classProperty', 'classMethod' ],
-                  'modifiers': [ 'private', 'protected' ],
-                  'leadingUnderscore': 'require',
-                  'format': [ 'camelCase' ],
+                  selector: 'classProperty',
+                  modifiers: [ 'private' ],
+                  format: [ 'camelCase' ],
+                  leadingUnderscore: 'require',
                },
                {
-                  'selector': [ 'class', 'interface' ],
-                  'format': [ 'PascalCase' ],
+                  selector: 'classProperty',
+                  modifiers: [ 'protected' ],
+                  format: [ 'camelCase' ],
+                  leadingUnderscore: 'require',
+               },
+               {
+                  selector: 'classProperty',
+                  modifiers: [ 'private', 'static' ],
+                  format: [ 'snake_case' ],
+                  leadingUnderscore: 'require',
+               },
+               {
+                  selector: 'classProperty',
+                  modifiers: [ 'protected', 'static' ],
+                  format: [ 'snake_case' ],
+                  leadingUnderscore: 'require',
+               },
+               {
+                  selector: 'classProperty',
+                  modifiers: [ 'public', 'static' ],
+                  format: [ 'snake_case' ],
+                  leadingUnderscore: 'forbid',
+               },
+               {
+                  selector: 'enum',
+                  format: [ 'PascalCase' ],
+               },
+               {
+                  selector: 'typeLike',
+                  format: [ 'PascalCase' ],
+               },
+               {
+                  selector: 'variable',
+                  format: [ 'camelCase' ],
+               },
+               {
+                  selector: 'parameter',
+                  format: [ 'camelCase' ],
+                  leadingUnderscore: 'allow',
+               },
+               {
+                  selector: 'variable',
+                  modifiers: [ 'global' ],
+                  format: [ 'UPPER_CASE', 'camelCase', 'PascalCase' ],
                },
             ],
             // no-shadow is incompatible with TypeScript code.
