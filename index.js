@@ -259,6 +259,9 @@ module.exports = {
 
    'overrides': [
       {
+         'files': [ '*.cjs' ],
+      },
+      {
          'files': [ '*.ts' ],
          'parser': '@typescript-eslint/parser',
          'parserOptions': {
