@@ -324,6 +324,23 @@ module.exports = {
                },
                {
                   selector: 'classProperty',
+                  modifiers: [ 'private', 'readonly', 'static' ],
+                  format: [ 'UPPER_CASE' ],
+                  leadingUnderscore: 'require',
+               },
+               {
+                  selector: 'classProperty',
+                  modifiers: [ 'protected', 'readonly', 'static' ],
+                  format: [ 'UPPER_CASE' ],
+                  leadingUnderscore: 'require',
+               },
+               {
+                  selector: 'classProperty',
+                  modifiers: [ 'public', 'readonly', 'static' ],
+                  format: [ 'UPPER_CASE' ],
+               },
+               {
+                  selector: 'classProperty',
                   modifiers: [ 'protected', 'static' ],
                   format: [ 'snake_case' ],
                   leadingUnderscore: 'require',
@@ -344,11 +361,11 @@ module.exports = {
                },
                {
                   selector: 'variable',
-                  format: [ 'camelCase' ],
+                  format: [ 'camelCase', 'PascalCase' ],
                },
                {
                   selector: 'parameter',
-                  format: [ 'camelCase' ],
+                  format: [ 'camelCase', 'PascalCase' ],
                   leadingUnderscore: 'allow',
                },
                {

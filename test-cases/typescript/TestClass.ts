@@ -1,12 +1,20 @@
+import { SmallClass } from './SmallClass';
+
 /**
  * Test class that adheres to our ESLint rules for TypeScript
  * @param test
  */
 export class TestClass {
 
+   public static readonly BANANA_SWEETNESS: string;
+
+   protected static readonly _BANANA_RIPENESS: string;
+
    protected static _banana_sweetness: string;
 
    private static _apple_type: string;
+
+   private static readonly _APPLE_COLOR: string;
 
    private readonly _appleColor: string;
 
@@ -26,6 +34,12 @@ export class TestClass {
 
    public getApple(): string {
       return TestClass.get_apple_type();
+   }
+
+   public provideSmallClass(Small: new (...args) => SmallClass): string {
+      const MySmallClass = new Small('Hello there!');
+
+      return MySmallClass.sayHello();
    }
 
    protected _getBananaSweetness(): string {
