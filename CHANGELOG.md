@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [our coding standards][commit-messages] for commit guidelines.
 
+## [3.2.0](https://github.com/silvermine/eslint-config-silvermine/compare/v3.1.0...v3.2.0) (2023-11-10)
+
+
+### Features
+
+* allow longer function declaration lines ([11e4950](https://github.com/silvermine/eslint-config-silvermine/commit/11e4950d442ef544bf8562e4ee12b4b6c986aed7))
+* fine tune naming conventions ([#92](https://github.com/silvermine/eslint-config-silvermine/issues/92)) ([ae13be5](https://github.com/silvermine/eslint-config-silvermine/commit/ae13be5e34840395722a3d620dea4d469ce5de93))
+* supporting linting of CJS file extensions ([69effe6](https://github.com/silvermine/eslint-config-silvermine/commit/69effe63ddebd0f023ae47f723f8bb70ec491be6))
+
+
+### Bug Fixes
+
+* vue/multi-word-component-names should be universal ([615ae24](https://github.com/silvermine/eslint-config-silvermine/commit/615ae240fb566778e5d4cdf1137688582c086003))
+
+
 ## [3.1.0](https://github.com/silvermine/eslint-config-silvermine/compare/v3.0.1...v3.1.0) (2022-08-30)
 
 
