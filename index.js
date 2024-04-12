@@ -24,8 +24,20 @@ module.exports = {
    'plugins': [
       '@silvermine/eslint-plugin-silvermine', // Our custom rules
       '@typescript-eslint', // TypeScript-specific rules
+      'import', // dependency import linting plugin via eslint-plugin-import
       'vue', // Vue-specific rules
    ],
+
+   // Settings for eslint-plugin-import
+   'settings': {
+      'import/parsers': {
+         '@typescript-eslint/parser': [ '.ts' ],
+      },
+      'import/resolver': {
+         'typescript': true,
+         'node': true,
+      },
+   },
 
    'parserOptions': {
       // Setting the ecmaVersion to 2019 allows ESLint to parse any file that has valid
@@ -53,6 +65,12 @@ module.exports = {
       '@silvermine/silvermine/brace-style': [ 'error', '1tbs', { 'allowSingleLine': false, 'allowSingleLineArrow': true } ],
       '@silvermine/silvermine/max-statements-per-line': 'error',
 
+      'import/newline-after-import': [ 'error' ],
+      'import/no-cycle': [ 'warn' ],
+      'import/no-duplicates': [ 'error' ],
+      'import/no-extraneous-dependencies': [ 'error', { packageDir: [ './' ] } ],
+      'import/no-mutable-exports': [ 'error' ],
+      'import/no-useless-path-segments': [ 'error' ],
 
       'indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
       'comma-dangle': [
