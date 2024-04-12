@@ -32,6 +32,8 @@
     "@silvermine/eslint-plugin-silvermine": "2.4.0",
     "@typescript-eslint/eslint-plugin": "5.17.0",
     "@typescript-eslint/parser": "5.17.0",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-import": "2.29.1",
     "eslint-plugin-vue": "8.7.1",
     "typescript": "4.6.3"
   },
