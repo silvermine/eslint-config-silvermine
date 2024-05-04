@@ -28,10 +28,7 @@ module.exports = {
    ],
 
    'parserOptions': {
-      // Setting the ecmaVersion to 2019 allows ESLint to parse any file that has valid
-      // syntax, even if we use things like spread and rest syntax. It would be nice to
-      // set this to something like 'latest', but you must specify a specific version.
-      'ecmaVersion': 2019,
+      'ecmaVersion': 'latest',
    },
 
    'env': {
