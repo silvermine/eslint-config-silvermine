@@ -33,6 +33,30 @@ Example:
 }
 ```
 
+## Migration to ESLint flag config
+
+ESLint version 8.57 and later enable support for ESLint's flat config. As opposed
+to use a customized configuration engine, this enables users to configure ESLint
+using JS objects and results in more flexibility and control over configuration.
+
+Add a file named `eslint.config.js` to the root of your project and import our
+configuration like so:
+
+```js
+// TODO: add example config
+```
+
+### VS Code Support
+
+For VS Code users, switch to the prerelease version of the VS Code ESLint extension,
+version 3.0.5 or later. Then in `.vscode/setting.json` enable the `useFlatConfig`option:
+
+```json
+{
+   "eslint.useFlatConfig": true
+}
+```
+
 ## Other Configuration Files Available
 
 In addition to the ESLint rules, this package provides configuration for the following:

@@ -5,23 +5,20 @@ const baseConfig = require('./index'),
 
 // Get all the base overrides, except for the chunk related to Vue (3). We'll replace the
 // Vue 3 rules with Vue 2 rules.
-const overrides = baseConfig.overrides.map((override) => {
-   if (override.parser !== 'vue-eslint-parser') {
-      return override;
+const overrides = baseConfig.map((configObject) => {
+   if (configObject.files && configObject.files !== [ '**/*.vue' ]) {
+      return configObject;
    }
    return Object.assign(
       {},
-      override,
       {
+         ...configObject,
          rules: getVueRules(2),
       }
    );
 });
 
-module.exports = Object.assign(
-   {},
-   baseConfig,
-   {
-      overrides: overrides,
-   }
-);
+module.exports = [
+   ...baseConfig,
+   ...overrides,
+];

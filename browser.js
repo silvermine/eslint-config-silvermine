@@ -5,14 +5,17 @@
 
 'use strict';
 
-module.exports = {
+const config = require('./index'),
+      globals = require('globals');
 
-   'env': {
-      'node': false,
-      'browser': true,
-      'commonjs': true,
+module.exports = [
+   ...config,
+   {
+      languageOptions: {
+         globals: {
+            ...globals.browser,
+            ...globals.commonjs,
+         },
+      },
    },
-
-   'extends': './index.js',
-
-};
+];

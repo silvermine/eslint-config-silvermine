@@ -5,15 +5,19 @@
 
 'use strict';
 
-module.exports = {
+const config = require('./index'),
+      globals = require('globals');
 
-   'env': {
-      'mocha': true,
+module.exports = [
+   ...config,
+   {
+      languageOptions: {
+         globals: {
+            ...globals.mocha,
+         },
+      },
+      rules: {
+         'no-empty-function': 'off',
+      },
    },
-
-   'extends': './node.js',
-
-   'rules': {
-      'no-empty-function': 'off',
-   },
-};
+];

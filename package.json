@@ -8,7 +8,7 @@
     "test": "npm run eslint",
     "release": "standard-version",
     "commitlint": "commitlint --from ee3b407",
-    "eslint": "eslint './**/*.{js,cjs,ts}'",
+    "eslint": "eslint .",
     "markdownlint": "markdownlint -c .markdownlint.json -i CHANGELOG.md '{,!(node_modules)/**/}*.md'",
     "standards": "npm run commitlint && npm run markdownlint && npm run eslint",
     "release:preview": "node ./node_modules/@silvermine/standardization/scripts/release.js preview",

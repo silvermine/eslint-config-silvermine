@@ -5,12 +5,16 @@
 
 'use strict';
 
-module.exports = {
+const config = require('./index'),
+      globals = require('globals');
 
-   'env': {
-      'node': true,
+module.exports = [
+   ...config,
+   {
+      languageOptions: {
+         globals: {
+            ...globals.node,
+         },
+      },
    },
-
-   'extends': './index.js',
-
-};
+];
