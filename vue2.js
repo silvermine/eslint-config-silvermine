@@ -18,7 +18,4 @@ const overrides = baseConfig.map((configObject) => {
    );
 });
 
-module.exports = [
-   ...baseConfig,
-   ...overrides,
-];
+module.exports = overrides;
