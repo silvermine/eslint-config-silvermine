@@ -8,16 +8,21 @@
 const config = require('./index'),
       globals = require('globals');
 
-module.exports = [
-   ...config,
-   {
-      languageOptions: {
-         globals: {
-            ...globals.mocha,
-         },
-      },
-      rules: {
-         'no-empty-function': 'off',
+const testConfig = {
+   languageOptions: {
+      globals: {
+         ...globals.mocha,
       },
    },
-];
+   rules: {
+      'no-empty-function': 'off',
+   },
+};
+
+module.exports = {
+   complete: [
+      ...config,
+      testConfig,
+   ],
+   discrete: testConfig,
+};

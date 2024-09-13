@@ -8,13 +8,18 @@
 const config = require('./index'),
       globals = require('globals');
 
-module.exports = [
-   ...config,
-   {
-      languageOptions: {
-         globals: {
-            ...globals.node,
-         },
+const nodeConfig = {
+   languageOptions: {
+      globals: {
+         ...globals.node,
       },
    },
-];
+};
+
+module.exports = {
+   complete: [
+      ...config,
+      nodeConfig,
+   ],
+   discrete: nodeConfig,
+};

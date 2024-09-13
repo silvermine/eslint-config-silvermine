@@ -1,7 +1,5 @@
 'use strict';
 
-const config = require('./node');
+const { complete } = require('./node');
 
-module.exports = [
-   ...config,
-];
+module.exports = complete;

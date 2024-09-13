@@ -18,4 +18,9 @@ const overrides = baseConfig.map((configObject) => {
    );
 });
 
-module.exports = overrides;
+module.exports = {
+   complete: overrides,
+   discrete: {
+      rules: getVueRules(2),
+   },
+};

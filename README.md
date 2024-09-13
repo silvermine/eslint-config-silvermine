@@ -36,7 +36,7 @@ Example:
 ## Migration to ESLint flag config
 
 ESLint version 8.57 and later enable support for ESLint's flat config. As opposed
-to use a customized configuration engine, this enables users to configure ESLint
+to using a customized configuration engine, this enables users to configure ESLint
 using JS objects and results in more flexibility and control over configuration.
 
 Add a file named `eslint.config.js` to the root of your project and import our
@@ -44,6 +44,46 @@ configuration like so:
 
 ```js
 // TODO: add example config
+```
+
+## Using Specific Configurations
+
+We maintain specific configurations for various project scenarios, such as
+Node.js, Mocha.js test suites, Vue3, and Vue2.
+
+These configs export two JS objects:
+
+   * `complete`: A configuration that includes our base config, and overrides or
+      additions relevant to your project scenario.
+   * `discrete`: Just the overrides or additions relevant to your
+      project scenario.
+
+Use these configurations in your project's `eslint.config.js` file:
+
+```js
+const { discrete } = require('@silvermine/eslint-config/node-tests');
+
+module.exports = [
+   {
+      files: [ 'tests/**.ts' ],
+      ...discrete
+   }
+]
+```
+
+```js
+const { complete } = require('@silvermine/eslint-config/node-tests');
+
+module.exports = [
+   ...complete
+]
+```
+
+If you need to use multiple discrete configs or override the import variable
+name, use object destructuring like so:
+
+```js
+const { complete: nodeTests } = require('@silvermine/eslint-config/node-tests');
 ```
 
 ### VS Code Support

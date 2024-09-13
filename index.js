@@ -16,23 +16,22 @@ const getVueRules = require('./partials/vue').getVueRules,
       esLintPluginSilvermine = require('@silvermine/eslint-plugin-silvermine'),
       typescriptESLint = require('typescript-eslint'),
       typescriptESLintParser = require('@typescript-eslint/parser'),
-      vue = require('eslint-plugin-vue'),
-      vueESLintParser = require('vue-eslint-parser');
+      eslintPluginVue = require('eslint-plugin-vue');
 
 module.exports = [
    esLint.configs.recommended,
    {
-      'ignorePatterns': [
+      'ignores': [
          'cdk.out',
-         // ESLint by default ignores directories with dot prefixes. Some of our projects use
-         // VuePress which maintains its source code in a `.vuepress` directory. This negated
-         // ignore pattern enables linting for any projects using our config.
+         // ESLint by default ignores directories with dot prefixes. Some of our
+         // projects use VuePress which maintains its source code in a
+         // `.vuepress` directory. This negated ignore pattern enables linting
+         // for any projects using our config.
          '!.vuepress',
       ],
 
       'plugins': {
          '@silvermine/eslint-plugin-silvermine': esLintPluginSilvermine, // Our custom rules
-         'vue': vue, // Vue-specific rules
       },
 
       'languageOptions': {
@@ -493,14 +492,12 @@ module.exports = [
          '@typescript-eslint/no-empty-interface': 'off',
       },
    },
+   ...eslintPluginVue.configs['flat/recommended'],
    {
       files: [ '**/*.vue' ],
-
       languageOptions: {
-         parser: vueESLintParser,
          parserOptions: {
             parser: typescriptESLintParser,
-            ecmaVersion: 2020,
             sourceType: 'module',
          },
          globals: {

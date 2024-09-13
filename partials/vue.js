@@ -1,12 +1,6 @@
 'use strict';
-const vueRulesBase = require('eslint-plugin-vue/lib/configs/base').rules,
-      vueRulesEssentials = require('eslint-plugin-vue/lib/configs/essential').rules,
-      vue3RulesEssentials = require('eslint-plugin-vue/lib/configs/vue3-essential').rules,
-      vueRulesStronglyRecommended = require('eslint-plugin-vue/lib/configs/strongly-recommended').rules,
-      vue3RulesStronglyRecommended = require('eslint-plugin-vue/lib/configs/vue3-strongly-recommended').rules,
-      vueRulesRecommended = require('eslint-plugin-vue/lib/configs/recommended').rules,
-      vue3RulesRecommended = require('eslint-plugin-vue/lib/configs/vue3-recommended').rules;
 
+const pluginVue = require('eslint-plugin-vue');
 
 const silvermineRulesUniversal = {
    // Priority B: Strongly Recommended
@@ -181,28 +175,39 @@ const silvermineRulesVue3Only = {
 module.exports = {
 
    getVueRules: function(vueVersion) {
-      // Always start with the base rules
-      let ruleSets = [ {}, vueRulesBase ];
+      const extractRulesFromConfig = (config) => {
+         return config
+            .filter((prop) => {
+               return prop.rules;
+            })
+            .map((obj) => {
+               return obj.rules;
+            })
+            .flat()
+            .reduce((prev, next) => {
+               return { ...prev, ...next };
+            }, {});
+      };
 
-      // Add in version dependent rules
+      let rules = {};
+
+      // Combine version dependent rules
       switch (vueVersion) {
          case 2: {
-            ruleSets = ruleSets.concat([
-               vueRulesEssentials,
-               vueRulesStronglyRecommended,
-               vueRulesRecommended,
-               silvermineRulesVue2Only,
-            ]);
+            rules = {
+               ...extractRulesFromConfig(pluginVue.configs['flat/vue2-strongly-recommended']),
+               ...silvermineRulesUniversal,
+               ...silvermineRulesVue2Only,
+            };
             break;
          }
 
          case 3: {
-            ruleSets = ruleSets.concat([
-               vue3RulesEssentials,
-               vue3RulesStronglyRecommended,
-               vue3RulesRecommended,
-               silvermineRulesVue3Only,
-            ]);
+            rules = {
+               ...extractRulesFromConfig(pluginVue.configs['flat/strongly-recommended']),
+               ...silvermineRulesUniversal,
+               ...silvermineRulesVue3Only,
+            };
             break;
          }
 
@@ -212,9 +217,6 @@ module.exports = {
       }
 
       // Lastly, always add our custom rules.
-      ruleSets.push(silvermineRulesUniversal);
-
-      // Assemble into an object ready to be passed to eslint.
-      return Object.assign.apply(Object, ruleSets);
+      return rules;
    },
 };
