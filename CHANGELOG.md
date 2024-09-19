@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [our coding standards][commit-messages] for commit guidelines.
 
+### [3.2.1](https://github.com/silvermine/eslint-config-silvermine/compare/v3.2.0...v3.2.1) (2024-09-19)
+
+
+### Bug Fixes
+
+* ignore cdk.out directories ([d072345](https://github.com/silvermine/eslint-config-silvermine/commit/d0723458f86afd1db68bb3302dcb0a8745e939f1))
+* remove invalid member-ordering value ([0f0349d](https://github.com/silvermine/eslint-config-silvermine/commit/0f0349d1e677036ac4575ac75de1c4efe5c313c3))
+
+
 ## [3.2.0](https://github.com/silvermine/eslint-config-silvermine/compare/v3.1.0...v3.2.0) (2023-11-10)
 
 
