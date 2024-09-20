@@ -43,7 +43,11 @@ Add a file named `eslint.config.js` to the root of your project and import our
 configuration like so:
 
 ```js
-// TODO: add example config
+const silvermineNodeConfig = require('@silvermine/eslint-config/node');
+
+module.exports = [
+   ...silvermineNodeConfig.complete,
+];
 ```
 
 ## Using Specific Configurations
