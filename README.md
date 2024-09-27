@@ -50,50 +50,94 @@ module.exports = [
 ];
 ```
 
-## Using Specific Configurations
+## Using Configuration Partials
 
 We maintain specific configurations for various project scenarios, such as
 Node.js, Mocha.js test suites, Vue3, and Vue2.
 
-These configs export two JS objects:
-
-   * `complete`: A configuration that includes our base config, and overrides or
-      additions relevant to your project scenario.
-   * `discrete`: Just the overrides or additions relevant to your
-      project scenario.
-
-Use these configurations in your project's `eslint.config.js` file:
+When using `eslint-config-silvermine` you have the option of using the default
+configuration. For example, below is how you would configure a Node.js project
+with TypeScript:
 
 ```js
-const { discrete } = require('@silvermine/eslint-config/node-tests');
+const config = require('@silvermine/eslint-config'),
+      node = require('@silvermine/eslint-config/partials/node');
 
 module.exports = [
+   ...config,
+   {
+      files: [ '**/*.ts' ],
+      ...node
+   }
+];
+```
+
+Below is how you would configure a browser library that uses only vanilla JS:
+
+```js
+const config = require('@silvermine/eslint-config'),
+      browser = require('@silvermine/eslint-config/partials/browser');
+
+module.exports = [
+   ...config,
+   {
+      files: [ '**/*.js' ],
+      ...browser
+   }
+];
+```
+
+When you need to override different parts of the config given specific project
+requirements, you can pull in configuration objects from the `partials`
+project directory:
+
+
+```js
+const config = require('@silvermine/eslint-config'),
+      node = require('@silvermine/eslint-config/partials/node'),
+      nodeTests = require('@silvermine/eslint-config/partials/node-tests');
+
+module.exports = [
+   ...config,
    {
       files: [ 'tests/**.ts' ],
-      ...discrete
+      ...nodeTests
    }
 ]
 ```
 
+### Vue Support
+
+Our default configuration supports Vue 3 by default.
+
+For legacy Vue.js 2.x projects, a Vue 2-specific configuration is available.
+In this situation your project would be configured like so:
+
 ```js
-const { complete } = require('@silvermine/eslint-config/node-tests');
+const config = require('@silvermine/eslint-config'),
+   eslintPluginVue = require('eslint-plugin-vue'),
+   vueConfig = require('@silvermine/eslint-config/partials/vue'),
+   vueBaseRules = require('@silvermine/eslint-config/partials/vue/vue-base');
 
 module.exports = [
-   ...complete
+   ...config,
+   ....eslintPluginVue.configs['flat/vue2-strongly-recommended'],
+   {
+      files: [ 'src/**.vue' ],
+      ...vueConfig,
+      rules: vueBaseRules
+   }
 ]
-```
-
-If you need to use multiple discrete configs or override the import variable
-name, use object destructuring like so:
-
-```js
-const { complete: nodeTests } = require('@silvermine/eslint-config/node-tests');
 ```
 
 ### VS Code Support
 
-For VS Code users, switch to the prerelease version of the VS Code ESLint extension,
-version 3.0.5 or later. Then in `.vscode/setting.json` enable the `useFlatConfig`option:
+For VS Code users, your installed version of the ESLint extension must be 3.0.5
+or later. This version of the extension supports flat config, while earlier
+versions only provide partial support.
+
+You _may_ need to adjust the project's local `.vscode/setting.json` and enable
+the `useFlatConfig`option:
 
 ```json
 {
@@ -109,13 +153,14 @@ basically for the same reasons.
 
 [semver-notes]: https://github.com/silvermine/eslint-plugin-silvermine/#note-on-semantic-versioning
 
-
 ## What version should I use?
 
 When choosing which version of this config to use, consider the following:
 
-   * v2.x.x is the newest branch of our config, which allows for ES2015+ features, as well
-     as TypeScript linting. On new projects, we recommend using this branch of the config.
+   * v4.x.x supports the latest ECMA Script features, and supports ESLint's
+     flat config configuration style _only_. On new projects, we recommend
+     using this branch of the config.
+   * v2.x.x allows for ES2015+ features, as well as TypeScript linting.
    * v1.x.x is the legacy version of our eslint config. This should primarily be used in
      legacy es5 projects and with node version < 8.10.0. It does not allow for many
      es2015+ features, such as spread/rest operators and arrow functions.

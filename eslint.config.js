@@ -1,5 +1,11 @@
 'use strict';
 
-const { complete } = require('./node');
+const config = require('./index'),
+      node = require('./partials/node');
 
-module.exports = complete;
+module.exports = [
+   ...config,
+   {
+      ...node,
+   },
+];
