@@ -33,28 +33,117 @@ Example:
 }
 ```
 
-## Other Configuration Files Available
+## Migration to ESLint flag config
 
-In addition to the ESLint rules, this package provides configuration for the following:
+ESLint version 8.57 and later enable support for ESLint's flat config. As opposed
+to using a customized configuration engine, this enables users to configure ESLint
+using JS objects and results in more flexibility and control over configuration.
 
-   * [EditorConfig](https://editorconfig.org/)
-      * Provides a default set of editor configuration values to use in Silvermine projects
-      * Usage: Symlink the .editorconfig file to the root of your project and use the
-        appropriate extension for your editor.
-      * `ln -s ./node_modules/@silvermine/eslint-config/.editorconfig`
-   * [commitlint](https://conventional-changelog.github.io/commitlint/)
-      * Provides linting for commit messages of Silvermine projects
-      * Usage: Add a `commitlint.config.js` file to the root of the project with the
-        following and then set up commitlint in the project:
+Add a file named `eslint.config.js` to the root of your project and import our
+configuration like so:
 
-        ```javascript
-        'use strict';
+```js
+const silvermineNodeConfig = require('@silvermine/eslint-config/node');
 
-        module.exports = {
-           extends: [ '@silvermine/eslint-config/commitlint' ],
-        };
-        ```
+module.exports = [
+   ...silvermineNodeConfig.complete,
+];
+```
 
+## Using Configuration Partials
+
+We maintain specific configurations for various project scenarios, such as
+Node.js, Mocha.js test suites, Vue3, and Vue2.
+
+When using `eslint-config-silvermine` you have the option of using the default
+configuration. For example, below is how you would configure a Node.js project
+with TypeScript:
+
+```js
+const config = require('@silvermine/eslint-config'),
+      node = require('@silvermine/eslint-config/partials/node');
+
+module.exports = [
+   ...config,
+   {
+      files: [ '**/*.ts' ],
+      ...node
+   }
+];
+```
+
+Below is how you would configure a browser library that uses only vanilla JS:
+
+```js
+const config = require('@silvermine/eslint-config'),
+      browser = require('@silvermine/eslint-config/partials/browser');
+
+module.exports = [
+   ...config,
+   {
+      files: [ '**/*.js' ],
+      ...browser
+   }
+];
+```
+
+When you need to override different parts of the config given specific project
+requirements, you can pull in configuration objects from the `partials`
+project directory:
+
+
+```js
+const config = require('@silvermine/eslint-config'),
+      node = require('@silvermine/eslint-config/partials/node'),
+      nodeTests = require('@silvermine/eslint-config/partials/node-tests');
+
+module.exports = [
+   ...config,
+   {
+      files: [ 'tests/**.ts' ],
+      ...nodeTests
+   }
+]
+```
+
+### Vue Support
+
+Our default configuration supports Vue 3 by default.
+
+For legacy Vue.js 2.x projects, a Vue 2-specific configuration is available.
+In this situation your project would be configured like so:
+
+```js
+const config = require('@silvermine/eslint-config'),
+   eslintPluginVue = require('eslint-plugin-vue'),
+   vueConfig = require('@silvermine/eslint-config/partials/vue'),
+   vueBaseRules = require('@silvermine/eslint-config/partials/vue/vue-base');
+
+module.exports = [
+   ...config,
+   ....eslintPluginVue.configs['flat/vue2-strongly-recommended'],
+   {
+      files: [ 'src/**.vue' ],
+      ...vueConfig,
+      rules: vueBaseRules
+   }
+]
+```
+
+### VS Code Support
+
+For VS Code users, your installed version of the ESLint extension must be 3.0.5
+or later. This version of the extension supports flat config, while earlier
+versions only provide partial support.
+
+You _may_ need to adjust the project's local `.vscode/setting.json` and enable
+the `useFlatConfig`option:
+
+```json
+{
+   "eslint.useFlatConfig": true
+}
+```
 
 ## Notes on Semantic Versioning
 
@@ -64,13 +153,14 @@ basically for the same reasons.
 
 [semver-notes]: https://github.com/silvermine/eslint-plugin-silvermine/#note-on-semantic-versioning
 
-
 ## What version should I use?
 
 When choosing which version of this config to use, consider the following:
 
-   * v2.x.x is the newest branch of our config, which allows for ES2015+ features, as well
-     as TypeScript linting. On new projects, we recommend using this branch of the config.
+   * v4.x.x supports the latest ECMA Script features, and supports ESLint's
+     flat config configuration style _only_. On new projects, we recommend
+     using this branch of the config.
+   * v2.x.x allows for ES2015+ features, as well as TypeScript linting.
    * v1.x.x is the legacy version of our eslint config. This should primarily be used in
      legacy es5 projects and with node version < 8.10.0. It does not allow for many
      es2015+ features, such as spread/rest operators and arrow functions.

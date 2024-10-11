@@ -5,10 +5,9 @@
 
 'use strict';
 
-const config = require('./index'),
-      globals = require('globals');
+const globals = require('globals');
 
-const testConfig = {
+module.exports = {
    languageOptions: {
       globals: {
          ...globals.mocha,
@@ -17,12 +16,4 @@ const testConfig = {
    rules: {
       'no-empty-function': 'off',
    },
-};
-
-module.exports = {
-   complete: [
-      ...config,
-      testConfig,
-   ],
-   discrete: testConfig,
 };
