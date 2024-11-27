@@ -3,3 +3,5 @@ node_modules
 # Editor files
 .vscode
 .idea
+
+.DS_Store

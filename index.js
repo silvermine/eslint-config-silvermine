@@ -9,7 +9,8 @@
 
 'use strict';
 
-const base = require('./partials/base'),
+const ignores = require('./partials/ignores'),
+      base = require('./partials/base'),
       javascript = require('./partials/javascript'),
       typescript = require('./partials/typescript'),
       vueConfig = require('./partials/vue'),
@@ -22,6 +23,7 @@ const base = require('./partials/base'),
 
 module.exports = [
    esLint.configs.recommended,
+   ignores,
    base,
    ...typescriptESLint.configs.recommended,
    {
