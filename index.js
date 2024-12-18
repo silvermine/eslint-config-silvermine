@@ -43,6 +43,7 @@ module.exports = [
       files: [ '**/*.vue' ],
       ...vueConfig,
       rules: {
+         ...typescript.rules,
          ...vueBaseRules,
          ...vue3rules,
       },
