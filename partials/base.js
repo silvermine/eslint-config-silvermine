@@ -1,8 +1,10 @@
-const esLintPluginSilvermine = require('@silvermine/eslint-plugin-silvermine');
+const esLintPluginSilvermine = require('@silvermine/eslint-plugin-silvermine'),
+      stylistic = require('@stylistic/eslint-plugin');
 
 module.exports = {
    plugins: {
       '@silvermine/eslint-plugin-silvermine': esLintPluginSilvermine, // Our custom rules
+      '@stylistic': stylistic,
    },
 
    languageOptions: {
@@ -24,8 +26,8 @@ module.exports = {
          'error', '1tbs', { 'allowSingleLine': false, 'allowSingleLineArrow': true },
       ],
       '@silvermine/eslint-plugin-silvermine/max-statements-per-line': 'error',
-      'indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
-      'comma-dangle': [
+      '@stylistic/indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
+      '@stylistic/comma-dangle': [
          'error',
          {
             'arrays': 'always-multiline',
@@ -42,7 +44,7 @@ module.exports = {
       'curly': 'error',
       'default-case': 'error',
       'default-param-last': 'error',
-      'dot-location': [ 'error', 'property' ],
+      '@stylistic/dot-location': [ 'error', 'property' ],
       'dot-notation': [
          'error',
          { 'allowPattern': '^[a-z]+(_[a-z]+)+$' }, // Allow obj['snake_case']
@@ -64,7 +66,7 @@ module.exports = {
       'no-extra-bind': 'error',
       'no-extra-label': 'error',
       'no-fallthrough': 'error',
-      'no-floating-decimal': 'error',
+      '@stylistic/no-floating-decimal': 'error',
       'no-implicit-coercion': [ 'error', { 'allow': [ '!!' ] } ],
       'no-implicit-globals': [ 'error', { 'lexicalBindings': true } ],
       'no-implied-eval': 'error',
@@ -72,7 +74,7 @@ module.exports = {
       'no-labels': 'error',
       'no-lone-blocks': 'error',
       'no-loop-func': 'error',
-      'no-multi-spaces': 'error',
+      '@stylistic/no-multi-spaces': 'error',
       'no-multi-str': 'error',
       'no-new': 'error',
       'no-new-func': 'error',
@@ -97,7 +99,7 @@ module.exports = {
       'no-with': 'error',
       'radix': 'error',
       'vars-on-top': 'error',
-      'wrap-iife': 'error',
+      '@stylistic/wrap-iife': 'error',
       'yoda': 'error',
       // because we are still on commonjs module
       'strict': 'off',
@@ -118,16 +120,16 @@ module.exports = {
       'no-process-env': 'error',
       'no-process-exit': 'error',
       'no-sync': 'error',
-      'array-bracket-spacing': [ 'error', 'always' ],
-      'block-spacing': 'error',
+      '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
+      '@stylistic/block-spacing': 'error',
       'camelcase': 'error',
-      'comma-spacing': 'error',
-      'comma-style': 'error',
-      'computed-property-spacing': 'error',
+      '@stylistic/comma-spacing': 'error',
+      '@stylistic/comma-style': 'error',
+      '@stylistic/computed-property-spacing': 'error',
       'consistent-this': [ 'error', 'self' ],
-      'eol-last': 'error',
-      'key-spacing': 'error',
-      'keyword-spacing': [
+      '@stylistic/eol-last': 'error',
+      '@stylistic/key-spacing': 'error',
+      '@stylistic/keyword-spacing': [
          'error',
          {
             'overrides': {
@@ -135,11 +137,11 @@ module.exports = {
             },
          },
       ],
-      'linebreak-style': [ 'error', 'unix' ],
-      'lines-around-comment': 'error',
-      'spaced-comment': [ 'error', 'always' ],
+      '@stylistic/linebreak-style': [ 'error', 'unix' ],
+      '@stylistic/lines-around-comment': 'error',
+      '@stylistic/spaced-comment': [ 'error', 'always' ],
       'max-depth': [ 'error', 4 ],
-      'max-len': [
+      '@stylistic/max-len': [
          'error',
          {
             'code': 140,
@@ -155,8 +157,8 @@ module.exports = {
          'error',
          { 'capIsNewExceptions': [ 'Q' ] },
       ],
-      'new-parens': 'error',
-      'padding-line-between-statements': [
+      '@stylistic/new-parens': 'error',
+      '@stylistic/padding-line-between-statements': [
          'error',
          { blankLine: 'always', prev: [ 'var', 'let', 'const' ], next: '*' },
       ],
@@ -166,7 +168,7 @@ module.exports = {
       'no-import-assign': 'error',
       'no-dupe-else-if': 'error',
       'no-lonely-if': 'error',
-      'no-multiple-empty-lines': [
+      '@stylistic/no-multiple-empty-lines': [
          'error',
          {
             'max': 2,
@@ -191,18 +193,18 @@ module.exports = {
          'YieldExpression',
       ],
       'no-setter-return': 'error',
-      'func-call-spacing': 'error',
-      'no-trailing-spaces': 'error',
+      '@stylistic/func-call-spacing': 'error',
+      '@stylistic/no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
-      'no-whitespace-before-property': 'error',
-      'object-curly-spacing': [ 'error', 'always' ],
+      '@stylistic/no-whitespace-before-property': 'error',
+      '@stylistic/object-curly-spacing': [ 'error', 'always' ],
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
-      'one-var-declaration-per-line': 'error',
-      'quotes': [ 'error', 'single' ],
-      'semi': [ 'error', 'always' ],
-      'semi-spacing': 'error',
-      'space-before-blocks': 'error',
-      'space-before-function-paren': [
+      '@stylistic/one-var-declaration-per-line': 'error',
+      '@stylistic/quotes': [ 'error', 'single' ],
+      '@stylistic/semi': [ 'error', 'always' ],
+      '@stylistic/semi-spacing': 'error',
+      '@stylistic/space-before-blocks': 'error',
+      '@stylistic/space-before-function-paren': [
          'error',
          {
             'anonymous': 'never',
@@ -210,14 +212,14 @@ module.exports = {
             'asyncArrow': 'always',
          },
       ],
-      'space-in-parens': [ 'error', 'never' ],
-      'space-infix-ops': 'error',
-      'space-unary-ops': 'error',
+      '@stylistic/space-in-parens': [ 'error', 'never' ],
+      '@stylistic/space-infix-ops': 'error',
+      '@stylistic/space-unary-ops': 'error',
       'unicode-bom': 'error',
       'arrow-body-style': [ 'error', 'always' ],
-      'arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
-      'arrow-parens': 'error',
-      'template-curly-spacing': [ 'error', 'never' ],
-      'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
+      '@stylistic/arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
+      '@stylistic/arrow-parens': 'error',
+      '@stylistic/template-curly-spacing': [ 'error', 'never' ],
+      '@stylistic/object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
    },
 };
