@@ -213,5 +213,10 @@ module.exports = {
             'typedefs': false,
          },
       ],
+
+      // Replace eslint space-infix-ops with equivalent typescript-eslint rule to support
+      // linting type definitions
+      'space-infix-ops': 'off',
+      '@typescript-eslint/space-infix-ops': [ 'error' ],
    },
 };
