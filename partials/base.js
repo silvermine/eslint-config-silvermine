@@ -1,8 +1,10 @@
-const esLintPluginSilvermine = require('@silvermine/eslint-plugin-silvermine');
+const esLintPluginSilvermine = require('@silvermine/eslint-plugin-silvermine'),
+      stylistic = require('@stylistic/eslint-plugin');
 
 module.exports = {
    plugins: {
       '@silvermine/eslint-plugin-silvermine': esLintPluginSilvermine, // Our custom rules
+      '@stylistic': stylistic,
    },
 
    languageOptions: {
