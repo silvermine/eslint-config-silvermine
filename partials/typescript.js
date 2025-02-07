@@ -1,6 +1,10 @@
-const typescriptESLintParser = require('@typescript-eslint/parser');
+const typescriptESLintParser = require('@typescript-eslint/parser'),
+      stylistic = require('@stylistic/eslint-plugin');
 
 module.exports = {
+   plugins: {
+      '@stylistic': stylistic,
+   },
    languageOptions: {
       'parserOptions': {
          'parser': typescriptESLintParser,
