@@ -99,7 +99,7 @@ module.exports = {
       'no-with': 'error',
       'radix': 'error',
       'vars-on-top': 'error',
-      'wrap-iife': 'error',
+      '@stylistic/wrap-iife': 'error',
       'yoda': 'error',
       // because we are still on commonjs module
       'strict': 'off',
