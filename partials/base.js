@@ -213,7 +213,7 @@ module.exports = {
          },
       ],
       'space-in-parens': [ 'error', 'never' ],
-      'space-infix-ops': 'error',
+      '@stylistic/space-infix-ops': 'error',
       'space-unary-ops': 'error',
       'unicode-bom': 'error',
       'arrow-body-style': [ 'error', 'always' ],
