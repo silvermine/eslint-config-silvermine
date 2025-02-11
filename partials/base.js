@@ -194,7 +194,7 @@ module.exports = {
       ],
       'no-setter-return': 'error',
       '@stylistic/func-call-spacing': 'error',
-      'no-trailing-spaces': 'error',
+      '@stylistic/no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
       'no-whitespace-before-property': 'error',
       'object-curly-spacing': [ 'error', 'always' ],
