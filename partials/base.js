@@ -44,7 +44,7 @@ module.exports = {
       'curly': 'error',
       'default-case': 'error',
       'default-param-last': 'error',
-      'dot-location': [ 'error', 'property' ],
+      '@stylistic/dot-location': [ 'error', 'property' ],
       'dot-notation': [
          'error',
          { 'allowPattern': '^[a-z]+(_[a-z]+)+$' }, // Allow obj['snake_case']
