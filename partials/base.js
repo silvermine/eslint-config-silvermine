@@ -138,7 +138,7 @@ module.exports = {
          },
       ],
       '@stylistic/linebreak-style': [ 'error', 'unix' ],
-      'lines-around-comment': 'error',
+      '@stylistic/lines-around-comment': 'error',
       'spaced-comment': [ 'error', 'always' ],
       'max-depth': [ 'error', 4 ],
       'max-len': [
