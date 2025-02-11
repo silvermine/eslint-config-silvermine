@@ -199,7 +199,7 @@ module.exports = {
       '@stylistic/no-whitespace-before-property': 'error',
       'object-curly-spacing': [ 'error', 'always' ],
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
-      'one-var-declaration-per-line': 'error',
+      '@stylistic/one-var-declaration-per-line': 'error',
       'quotes': [ 'error', 'single' ],
       'semi': [ 'error', 'always' ],
       'semi-spacing': 'error',
