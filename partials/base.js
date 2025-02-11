@@ -127,7 +127,7 @@ module.exports = {
       'consistent-this': [ 'error', 'self' ],
       '@stylistic/eol-last': 'error',
       '@stylistic/key-spacing': 'error',
-      'keyword-spacing': [
+      '@stylistic/keyword-spacing': [
          'error',
          {
             'overrides': {
