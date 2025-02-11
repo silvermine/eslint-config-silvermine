@@ -219,7 +219,7 @@ module.exports = {
       'arrow-body-style': [ 'error', 'always' ],
       '@stylistic/arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
       '@stylistic/arrow-parens': 'error',
-      'template-curly-spacing': [ 'error', 'never' ],
+      '@stylistic/template-curly-spacing': [ 'error', 'never' ],
       'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
    },
 };
