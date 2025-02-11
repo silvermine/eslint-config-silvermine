@@ -128,7 +128,7 @@ module.exports = {
       '@stylistic/computed-property-spacing': 'error',
       'consistent-this': [ 'error', 'self' ],
       '@stylistic/eol-last': 'error',
-      'key-spacing': 'error',
+      '@stylistic/key-spacing': 'error',
       'keyword-spacing': [
          'error',
          {
