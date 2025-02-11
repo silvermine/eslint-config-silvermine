@@ -200,7 +200,7 @@ module.exports = {
       'object-curly-spacing': [ 'error', 'always' ],
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       '@stylistic/one-var-declaration-per-line': 'error',
-      'quotes': [ 'error', 'single' ],
+      '@stylistic/quotes': [ 'error', 'single' ],
       'semi': [ 'error', 'always' ],
       'semi-spacing': 'error',
       'space-before-blocks': 'error',
