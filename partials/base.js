@@ -168,7 +168,7 @@ module.exports = {
       'no-import-assign': 'error',
       'no-dupe-else-if': 'error',
       'no-lonely-if': 'error',
-      'no-multiple-empty-lines': [
+      '@stylistic/no-multiple-empty-lines': [
          'error',
          {
             'max': 2,
