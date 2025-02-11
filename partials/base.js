@@ -157,7 +157,7 @@ module.exports = {
          'error',
          { 'capIsNewExceptions': [ 'Q' ] },
       ],
-      'new-parens': 'error',
+      '@stylistic/new-parens': 'error',
       'padding-line-between-statements': [
          'error',
          { blankLine: 'always', prev: [ 'var', 'let', 'const' ], next: '*' },
