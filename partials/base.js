@@ -210,7 +210,7 @@ module.exports = {
             'asyncArrow': 'always',
          },
       ],
-      'space-in-parens': [ 'error', 'never' ],
+      '@stylistic/space-in-parens': [ 'error', 'never' ],
       'space-infix-ops': 'error',
       'space-unary-ops': 'error',
       'unicode-bom': 'error',
