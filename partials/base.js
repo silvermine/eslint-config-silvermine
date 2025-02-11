@@ -121,7 +121,7 @@ module.exports = {
       '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
       'block-spacing': 'error',
       'camelcase': 'error',
-      'comma-spacing': 'error',
+      '@stylistic/comma-spacing': 'error',
       'comma-style': 'error',
       'computed-property-spacing': 'error',
       'consistent-this': [ 'error', 'self' ],
