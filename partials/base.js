@@ -198,7 +198,7 @@ module.exports = {
       '@stylistic/no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
       '@stylistic/no-whitespace-before-property': 'error',
-      'object-curly-spacing': [ 'error', 'always' ],
+      '@stylistic/object-curly-spacing': [ 'error', 'always' ],
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       '@stylistic/one-var-declaration-per-line': 'error',
       '@stylistic/quotes': [ 'error', 'single' ],
