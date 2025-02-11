@@ -202,7 +202,7 @@ module.exports = {
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       '@stylistic/one-var-declaration-per-line': 'error',
       '@stylistic/quotes': [ 'error', 'single' ],
-      'semi': [ 'error', 'always' ],
+      '@stylistic/semi': [ 'error', 'always' ],
       '@stylistic/semi-spacing': 'error',
       '@stylistic/space-before-blocks': 'error',
       '@stylistic/space-before-function-paren': [
