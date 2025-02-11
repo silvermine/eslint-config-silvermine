@@ -196,7 +196,7 @@ module.exports = {
       '@stylistic/func-call-spacing': 'error',
       '@stylistic/no-trailing-spaces': 'error',
       'no-unneeded-ternary': 'error',
-      'no-whitespace-before-property': 'error',
+      '@stylistic/no-whitespace-before-property': 'error',
       'object-curly-spacing': [ 'error', 'always' ],
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       'one-var-declaration-per-line': 'error',
