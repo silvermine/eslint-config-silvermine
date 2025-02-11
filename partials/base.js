@@ -120,7 +120,7 @@ module.exports = {
       'no-process-env': 'error',
       'no-process-exit': 'error',
       'no-sync': 'error',
-      'array-bracket-spacing': [ 'error', 'always' ],
+      '@stylistic/array-bracket-spacing': [ 'error', 'always' ],
       'block-spacing': 'error',
       'camelcase': 'error',
       'comma-spacing': 'error',
