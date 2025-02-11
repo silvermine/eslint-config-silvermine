@@ -220,6 +220,6 @@ module.exports = {
       '@stylistic/arrow-spacing': [ 'error', { 'before': true, 'after': true } ],
       '@stylistic/arrow-parens': 'error',
       '@stylistic/template-curly-spacing': [ 'error', 'never' ],
-      'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
+      '@stylistic/object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': true } ],
    },
 };
