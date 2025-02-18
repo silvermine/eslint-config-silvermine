@@ -26,7 +26,7 @@ module.exports = {
          'error', '1tbs', { 'allowSingleLine': false, 'allowSingleLineArrow': true },
       ],
       '@silvermine/eslint-plugin-silvermine/max-statements-per-line': 'error',
-      'indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
+      '@stylistic/indent': [ 'error', 3, { 'VariableDeclarator': 'first', 'SwitchCase': 1 } ],
       'comma-dangle': [
          'error',
          {
