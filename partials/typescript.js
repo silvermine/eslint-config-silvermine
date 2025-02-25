@@ -128,7 +128,7 @@ module.exports = {
       '@typescript-eslint/no-redeclare': [ 'error' ],
       '@typescript-eslint/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
       '@typescript-eslint/explicit-member-accessibility': 'error',
-      '@typescript-eslint/member-delimiter-style': 'error',
+      '@stylistic/member-delimiter-style': 'error',
       '@typescript-eslint/consistent-type-assertions': [ 'error', { 'assertionStyle': 'as' } ],
       '@typescript-eslint/no-array-constructor': 'error',
       '@typescript-eslint/no-namespace': 'error',
@@ -196,7 +196,7 @@ module.exports = {
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/parameter-properties': [ 'error', { 'allow': [ 'private' ] } ],
       '@typescript-eslint/triple-slash-reference': [ 'error', { 'path': 'never', 'types': 'never', 'lib': 'never' } ],
-      '@typescript-eslint/type-annotation-spacing': [
+      '@stylistic/type-annotation-spacing': [
          'error',
          {
             'before': false,
@@ -217,10 +217,5 @@ module.exports = {
             'typedefs': false,
          },
       ],
-
-      // Replace eslint space-infix-ops with equivalent typescript-eslint rule to support
-      // linting type definitions
-      'space-infix-ops': 'off',
-      '@typescript-eslint/space-infix-ops': [ 'error' ],
    },
 };
