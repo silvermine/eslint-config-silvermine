@@ -128,7 +128,6 @@ module.exports = {
       '@typescript-eslint/no-redeclare': [ 'error' ],
       '@typescript-eslint/explicit-function-return-type': [ 'error', { 'allowExpressions': true } ],
       '@typescript-eslint/explicit-member-accessibility': 'error',
-      '@stylistic/member-delimiter-style': 'error',
       '@typescript-eslint/consistent-type-assertions': [ 'error', { 'assertionStyle': 'as' } ],
       '@typescript-eslint/no-array-constructor': 'error',
       '@typescript-eslint/no-namespace': 'error',
@@ -196,16 +195,6 @@ module.exports = {
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/parameter-properties': [ 'error', { 'allow': [ 'private' ] } ],
       '@typescript-eslint/triple-slash-reference': [ 'error', { 'path': 'never', 'types': 'never', 'lib': 'never' } ],
-      '@stylistic/type-annotation-spacing': [
-         'error',
-         {
-            'before': false,
-            'after': true,
-            'overrides': {
-               'arrow': { 'before': true, 'after': true },
-            },
-         },
-      ],
       '@typescript-eslint/no-empty-interface': 'error',
 
       // Turn off the core no-use-before-define to avoid double reporting errors.
@@ -215,6 +204,19 @@ module.exports = {
          {
             'functions': false,
             'typedefs': false,
+         },
+      ],
+
+      // Stylistic rules
+      '@stylistic/member-delimiter-style': 'error',
+      '@stylistic/type-annotation-spacing': [
+         'error',
+         {
+            'before': false,
+            'after': true,
+            'overrides': {
+               'arrow': { 'before': true, 'after': true },
+            },
          },
       ],
    },
