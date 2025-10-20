@@ -154,6 +154,7 @@ module.exports = {
       'one-var': [ 'error', { 'var': 'always', 'let': 'consecutive' } ],
       'unicode-bom': 'error',
       'arrow-body-style': [ 'error', 'always' ],
+      'prefer-promise-reject-errors': 'error',
 
       // Stylistic rules
       '@stylistic/dot-location': [ 'error', 'property' ],
