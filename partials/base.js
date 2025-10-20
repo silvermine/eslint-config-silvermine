@@ -127,6 +127,7 @@ module.exports = {
          { 'capIsNewExceptions': [ 'Q' ] },
       ],
       'prefer-regex-literals': 'error',
+      'prefer-const': 'error',
       'no-array-constructor': 'error',
       'no-bitwise': 'error',
       'no-import-assign': 'error',
