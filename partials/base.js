@@ -11,6 +11,10 @@ module.exports = {
       'ecmaVersion': 'latest',
    },
 
+   linterOptions: {
+      'reportUnusedDisableDirectives': true,
+   },
+
    rules: {
       '@silvermine/eslint-plugin-silvermine/array-indentation': 'error',
       '@silvermine/eslint-plugin-silvermine/call-indentation': 'error',
