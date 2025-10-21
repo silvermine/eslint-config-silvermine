@@ -6,6 +6,14 @@ const config = require('./index'),
 module.exports = [
    ...config,
    {
+      files: [ '**/*.ts' ],
+      languageOptions: {
+         parserOptions: {
+            project: [ './tsconfig.node.json' ],
+         },
+      },
+   },
+   {
       ...node,
    },
 ];
