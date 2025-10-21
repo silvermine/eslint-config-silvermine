@@ -197,6 +197,7 @@ module.exports = {
       '@typescript-eslint/triple-slash-reference': [ 'error', { 'path': 'never', 'types': 'never', 'lib': 'never' } ],
       '@typescript-eslint/no-empty-interface': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-for-in-array': 'error',
 
       // Turn off the core no-use-before-define to avoid double reporting errors.
       'no-use-before-define': 'off',
