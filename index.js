@@ -29,6 +29,13 @@ module.exports = [
    {
       files: [ '**/*.ts' ],
       ...typescript,
+      languageOptions: {
+         ...typescript.languageOptions,
+         parserOptions: {
+            ...typescript.languageOptions.parserOptions,
+            project: [ './tsconfig.node.json' ],
+         },
+      },
    },
    {
       files: [ '**/*.js', '**/*.cjs' ],
@@ -46,6 +53,14 @@ module.exports = [
          ...typescript.rules,
          ...vueBaseRules,
          ...vue3rules,
+      },
+      languageOptions: {
+         ...vueConfig.languageOptions,
+         parserOptions: {
+            ...vueConfig.languageOptions.parserOptions,
+            project: [ './tsconfig.web.json' ],
+            extraFileExtensions: [ '.vue' ],
+         },
       },
    },
 ];

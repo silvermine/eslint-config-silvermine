@@ -1,0 +1,28 @@
+{
+   "extends": "@vue/tsconfig/tsconfig.dom.json",
+   "include": [
+      "./**/*.vue"
+   ],
+   "compilerOptions": {
+      "rootDir": "./",
+      "composite": true,
+      "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+      "declarationMap": true,
+      "verbatimModuleSyntax": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "allowSyntheticDefaultImports": true,
+      "forceConsistentCasingInFileNames": true,
+      "types": [
+         "./env.d.ts"
+      ]
+   },
+   "vueCompilerOptions": {
+      "strictTemplates": true,
+      "fallthroughAttributes": true,
+      "checkUnknownProps": false,
+      "experimentalResolveStyleCssClasses": "scoped"
+   }
+}
