@@ -207,6 +207,7 @@ module.exports = {
             'typedefs': false,
          },
       ],
+      '@typescript-eslint/restrict-plus-operands': 'error',
 
       // Stylistic rules
       '@stylistic/member-delimiter-style': 'error',
