@@ -61,16 +61,26 @@ with TypeScript:
 
 ```js
 const config = require('@silvermine/eslint-config'),
-      node = require('@silvermine/eslint-config/partials/node');
+      node = require('@silvermine/eslint-config/partials/node'),
+      typescript = require('@silvermine/eslint-config/partials/typescript');
 
 module.exports = [
    ...config,
    {
       files: [ '**/*.ts' ],
-      ...node
-   }
+      ...typescript,
+      languageOptions: {
+         parserOptions: {
+            project: 'tsconfig.node.json',
+         },
+      },
+      ...node,
+   },
 ];
 ```
+
+Notice that we must specify the `project` property within `languageOptions.parserOptions`
+to enable TypeScript strongly typed linting.
 
 Below is how you would configure a browser library that uses only vanilla JS:
 
@@ -108,7 +118,26 @@ module.exports = [
 
 ### Vue Support
 
-Our default configuration supports Vue 3 by default.
+Below is an example of using Vue 3 with TypeScript:
+
+```js
+const config = require('@silvermine/eslint-config'),
+      vue = require('@silvermine/eslint-config/partials/vue');
+
+module.exports = [
+   ...config,
+   {
+      files: [ '**/*.vue' ],
+      ...vue,
+      languageOptions: {
+         parserOptions: {
+            project: 'tsconfig.web.json',
+         },
+      },
+   },
+];
+```
+
 
 For legacy Vue.js 2.x projects, a Vue 2-specific configuration is available.
 In this situation your project would be configured like so:

@@ -1,0 +1,17 @@
+{
+   "extends": "@silvermine/typescript-config/tsconfig.esm.json",
+   "include": ["./**/*.ts", "./test-cases/**/*.ts"],
+   "compilerOptions": {
+      "rootDir": "./",
+      "composite": true,
+      "noEmit": true,
+      "module": "ES2020",
+      "moduleResolution": "Bundler",
+      "declarationMap": true,
+      "skipLibCheck": true,
+      "lib": ["ES2020"],
+      "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+      "forceConsistentCasingInFileNames": true,
+      "types": ["node", "vite/client", "./env.d.ts"]
+   }
+}
