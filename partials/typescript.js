@@ -198,6 +198,7 @@ module.exports = {
       '@typescript-eslint/no-empty-interface': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-for-in-array': 'error',
+      '@typescript-eslint/no-misused-promises': 'error',
 
       // Turn off the core no-use-before-define to avoid double reporting errors.
       'no-use-before-define': 'off',
