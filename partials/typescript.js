@@ -209,6 +209,7 @@ module.exports = {
          },
       ],
       '@typescript-eslint/restrict-plus-operands': 'error',
+      '@typescript-eslint/restrict-template-expressions': 'error',
 
       // Stylistic rules
       '@stylistic/member-delimiter-style': 'error',
