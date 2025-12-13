@@ -1,0 +1,19 @@
+{
+   "extends": "@silvermine/typescript-config/tsconfig.esm.json",
+   "compilerOptions": {
+      "rootDir": "./src",
+      "outDir": "./dist",
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "noEmit": false,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "lib": [ "ES2022" ]
+   },
+   "include": [ "src/**/*.ts" ],
+   "exclude": [ "**/*.test.ts", "tests/**" ]
+}

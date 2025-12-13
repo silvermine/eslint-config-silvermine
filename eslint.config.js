@@ -1,19 +1,14 @@
-'use strict';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import config from './dist/index.js';
+import node from './dist/partials/node.js';
 
-const config = require('./index'),
-      node = require('./partials/node');
-
-module.exports = [
+export default defineConfig([
    ...config,
-   {
-      files: [ '**/*.ts' ],
-      languageOptions: {
-         parserOptions: {
-            project: [ './tsconfig.node.json' ],
-         },
-      },
-   },
-   {
-      ...node,
-   },
-];
+   node,
+   // Disable type-checked rules for test-cases (they are intentional example files)
+   globalIgnores([
+      'test-cases/**/*.vue',
+      'test-cases/**/*.ts',
+      'test-cases/**/*.js',
+   ]),
+]);

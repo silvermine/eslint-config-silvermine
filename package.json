@@ -1,20 +1,56 @@
 {
    "name": "@silvermine/eslint-config",
    "version": "3.2.1",
-   "description": "JS Code Standards for all SilverMine projects - eslint enforcement",
-   "main": "index.js",
+   "description": "JS Code Standards for all SilverMine projects - ESLint enforcement",
+   "type": "module",
    "scripts": {
+      "build": "tsc -p tsconfig.build.json",
+      "prepare": "npm run build",
       "check-node-version": "check-node-version --npm 11.6.1",
-      "test": "npm run eslint",
-      "release": "standard-version",
-      "commitlint": "commitlint --from ee3b407",
+      "test": "vitest run --coverage",
+      "test:watch": "vitest",
+      "commitlint": "commitlint --from 3d0c92c",
       "eslint": "eslint .",
-      "markdownlint": "markdownlint -c .markdownlint.json -i CHANGELOG.md '{,!(node_modules)/**/}*.md'",
+      "markdownlint": "markdownlint-cli2",
       "standards": "npm run commitlint && npm run markdownlint && npm run eslint",
       "release:preview": "node ./node_modules/@silvermine/standardization/scripts/release.js preview",
       "release:prep-changelog": "node ./node_modules/@silvermine/standardization/scripts/release.js prep-changelog",
       "release:finalize": "node ./node_modules/@silvermine/standardization/scripts/release.js finalize"
    },
+   "main": "./dist/index.js",
+   "types": "./dist/index.d.ts",
+   "exports": {
+      ".": {
+         "types": "./dist/index.d.ts",
+         "default": "./dist/index.js"
+      },
+      "./node-tests": {
+         "types": "./dist/node-tests.d.ts",
+         "default": "./dist/node-tests.js"
+      },
+      "./partials/*": {
+         "types": "./dist/partials/*.d.ts",
+         "default": "./dist/partials/*.js"
+      },
+      "./partials/vue/*": {
+         "types": "./dist/partials/vue/*.d.ts",
+         "default": "./dist/partials/vue/*.js"
+      },
+      "./plugin": {
+         "types": "./dist/plugin/index.d.ts",
+         "default": "./dist/plugin/index.js"
+      },
+      "./plugin/types": {
+         "types": "./dist/plugin/types.d.ts",
+         "default": "./dist/plugin/types.js"
+      }
+   },
+   "files": [
+      "dist",
+      "README.md",
+      "LICENSE",
+      "CHANGELOG.md"
+   ],
    "repository": {
       "type": "git",
       "url": "git+https://github.com/silvermine/eslint-config-silvermine.git"
@@ -30,27 +66,29 @@
    },
    "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
    "dependencies": {
-      "@eslint/js": "8.57.0",
-      "@silvermine/eslint-plugin-silvermine": "2.5.0",
-      "@stylistic/eslint-plugin": "3.0.1",
-      "@typescript-eslint/parser": "7.12.0",
-      "eslint-plugin-vue": "9.27.0",
-      "globals": "15.6.0",
-      "typescript-eslint": "7.12.0"
+      "@eslint/js": "9.39.2",
+      "@stylistic/eslint-plugin": "5.6.1",
+      "@typescript-eslint/parser": "8.49.0",
+      "eslint-plugin-vue": "10.6.2",
+      "globals": "16.5.0",
+      "typescript-eslint": "8.49.0",
+      "vue-eslint-parser": "10.2.0"
    },
    "devDependencies": {
-      "@silvermine/standardization": "2.0.0",
-      "@types/eslint__js": "8.42.3",
-      "cz-conventional-changelog": "3.0.2",
-      "eslint": "8.57.0",
-      "standard-version": "7.0.1",
-      "typescript": "5.8.3",
+      "@silvermine/standardization": "2.2.3",
       "@silvermine/typescript-config": "github:silvermine/typescript-config#ea8b79237aee970a15ab85beedf8e524478ef671",
-      "vue": "3.5.18",
-      "@vue/tsconfig": "0.7.0"
+      "@types/eslint": "9.6.1",
+      "@types/node": "25.0.1",
+      "@vitest/coverage-v8": "3.1.4",
+      "@vue/tsconfig": "0.7.0",
+      "cz-conventional-changelog": "3.3.0",
+      "eslint": "9.39.1",
+      "typescript": "5.9.3",
+      "vitest": "3.1.4",
+      "vue": "3.5.25"
    },
    "peerDependencies": {
-      "eslint": ">= 8.57.0"
+      "eslint": ">= 9.0.0"
    },
    "config": {
       "commitizen": {

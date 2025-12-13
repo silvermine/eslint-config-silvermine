@@ -1,17 +1,15 @@
 # Silvermine ESLint Rules
 
-[![NPM Version](https://img.shields.io/npm/v/@silvermine/eslint-config.svg)](https://www.npmjs.com/package/@silvermine/eslint-config)
-[![License](https://img.shields.io/github/license/silvermine/eslint-config-silvermine.svg)](./LICENSE)
-[![Build Status](https://travis-ci.org/silvermine/eslint-config-silvermine.svg?branch=master)](https://travis-ci.org/silvermine/eslint-config-silvermine)
-[![Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine.svg)](https://david-dm.org/silvermine/eslint-config-silvermine)
-[![Dev Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine/dev-status.svg)](https://david-dm.org/silvermine/eslint-config-silvermine#info=devDependencies&view=table)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![NPM Version][npm-version]][npm-version-url]
+[![License][license-badge]](./LICENSE)
+[![Build Status][build]][build-url]
+[![Coverage Status][coverage]][coverage-url]
+![Conventional Commits][conventional]
 
 
 ## What?
 
 Shareable [ESLint](http://eslint.org/) configuration for all Silvermine projects.
-
 
 ## Why?
 
@@ -33,38 +31,38 @@ Example:
 }
 ```
 
-## Migration to ESLint flag config
+## Migration to ESLint Flat Config
 
-ESLint version 8.57 and later enable support for ESLint's flat config. As opposed
-to using a customized configuration engine, this enables users to configure ESLint
-using JS objects and results in more flexibility and control over configuration.
+ESLint version 8.57 and later enable support for ESLint's flat config. As opposed to using
+a customized configuration engine, this enables users to configure ESLint using JS objects
+and results in more flexibility and control over configuration.
 
 Add a file named `eslint.config.js` to the root of your project and import our
 configuration like so:
 
 ```js
-const silvermineNodeConfig = require('@silvermine/eslint-config/node');
+import config from '@silvermine/eslint-config';
 
-module.exports = [
-   ...silvermineNodeConfig.complete,
+export default [
+   ...config,
 ];
 ```
 
 ## Using Configuration Partials
 
-We maintain specific configurations for various project scenarios, such as
-Node.js, Mocha.js test suites, Vue3, and Vue2.
+We maintain specific configurations for various project scenarios, such as Node.js,
+Mocha.js test suites, Vue 3, and Vue 2.
 
 When using `eslint-config-silvermine` you have the option of using the default
-configuration. For example, below is how you would configure a Node.js project
-with TypeScript:
+configuration. For example, below is how you would configure a Node.js project with
+TypeScript:
 
 ```js
-const config = require('@silvermine/eslint-config'),
-      node = require('@silvermine/eslint-config/partials/node'),
-      typescript = require('@silvermine/eslint-config/partials/typescript');
+import config from '@silvermine/eslint-config';
+import node from '@silvermine/eslint-config/partials/node';
+import typescript from '@silvermine/eslint-config/partials/typescript';
 
-module.exports = [
+export default [
    ...config,
    {
       files: [ '**/*.ts' ],
@@ -85,35 +83,35 @@ to enable TypeScript strongly typed linting.
 Below is how you would configure a browser library that uses only vanilla JS:
 
 ```js
-const config = require('@silvermine/eslint-config'),
-      browser = require('@silvermine/eslint-config/partials/browser');
+import config from '@silvermine/eslint-config';
+import browser from '@silvermine/eslint-config/partials/browser';
 
-module.exports = [
+export default [
    ...config,
    {
       files: [ '**/*.js' ],
-      ...browser
-   }
+      ...browser,
+   },
 ];
 ```
 
 When you need to override different parts of the config given specific project
-requirements, you can pull in configuration objects from the `partials`
-project directory:
+requirements, you can pull in configuration objects from the `partials` project directory:
 
 
 ```js
-const config = require('@silvermine/eslint-config'),
-      node = require('@silvermine/eslint-config/partials/node'),
-      nodeTests = require('@silvermine/eslint-config/partials/node-tests');
+import config from '@silvermine/eslint-config';
+import node from '@silvermine/eslint-config/partials/node';
+import nodeTests from '@silvermine/eslint-config/partials/node-tests';
 
-module.exports = [
+export default [
    ...config,
    {
-      files: [ 'tests/**.ts' ],
-      ...nodeTests
-   }
-]
+      files: [ 'tests/**/*.ts' ],
+      ...node,
+      ...nodeTests,
+   },
+];
 ```
 
 ### Vue Support
@@ -121,10 +119,10 @@ module.exports = [
 Below is an example of using Vue 3 with TypeScript:
 
 ```js
-const config = require('@silvermine/eslint-config'),
-      vue = require('@silvermine/eslint-config/partials/vue');
+import config from '@silvermine/eslint-config';
+import vue from '@silvermine/eslint-config/partials/vue';
 
-module.exports = [
+export default [
    ...config,
    {
       files: [ '**/*.vue' ],
@@ -139,34 +137,34 @@ module.exports = [
 ```
 
 
-For legacy Vue.js 2.x projects, a Vue 2-specific configuration is available.
-In this situation your project would be configured like so:
+For legacy Vue.js 2.x projects, a Vue-2-specific configuration is available. In this
+situation your project would be configured like so:
 
 ```js
-const config = require('@silvermine/eslint-config'),
-   eslintPluginVue = require('eslint-plugin-vue'),
-   vueConfig = require('@silvermine/eslint-config/partials/vue'),
-   vueBaseRules = require('@silvermine/eslint-config/partials/vue/vue-base');
+import config from '@silvermine/eslint-config';
+import eslintPluginVue from 'eslint-plugin-vue';
+import vueConfig from '@silvermine/eslint-config/partials/vue';
+import vueBaseRules from '@silvermine/eslint-config/partials/vue/vue-base';
 
-module.exports = [
+export default [
    ...config,
-   ....eslintPluginVue.configs['flat/vue2-strongly-recommended'],
+   ...eslintPluginVue.configs['flat/vue2-strongly-recommended'],
    {
-      files: [ 'src/**.vue' ],
+      files: [ 'src/**/*.vue' ],
       ...vueConfig,
-      rules: vueBaseRules
-   }
-]
+      rules: vueBaseRules,
+   },
+];
 ```
 
 ### VS Code Support
 
-For VS Code users, your installed version of the ESLint extension must be 3.0.5
-or later. This version of the extension supports flat config, while earlier
-versions only provide partial support.
+For VS Code users, your installed version of the ESLint extension must be 3.0.5 or later.
+This version of the extension supports flat config, while earlier versions only provide
+partial support.
 
-You _may_ need to adjust the project's local `.vscode/setting.json` and enable
-the `useFlatConfig`option:
+You _may_ need to adjust the project's local `.vscode/setting.json` and enable the
+`useFlatConfig`option:
 
 ```json
 {
@@ -176,50 +174,46 @@ the `useFlatConfig`option:
 
 ## Notes on Semantic Versioning
 
-See the [notes we made in eslint-plugin-silvermine][semver-notes] regarding our use of
-version numbers here. The same decisions made for that repo also apply to this repo,
-basically for the same reasons.
+There are some unusual concepts with this repo that we have to deal with when versioning
+it. For example, what is a "breaking change" in this repo? Definitely a major change to
+our coding standards (e.g. changing how many spaces we use for indents, or changing to
+tabs) would be a major, breaking change because every code file would need to be changed.
+But there are many smaller changes that can be made (introducing a new rule that we've
+basically followed by convention, for example) that are not really breaking, but may
+require some minor codebase changes when you upgrade to the newer rule config. Even fixing
+a bug (a patch version) could require changes to your codebase if the rule implementation
+was not finding violations previously.
 
-[semver-notes]: https://github.com/silvermine/eslint-plugin-silvermine/#note-on-semantic-versioning
+Thus, we've decided that on this particular repo we will not strictly follow semantic
+versioning. Instead, new rules can be added with a minor version bump. Something that's
+strictly a bug fix of an existing rule (not changing the principle of the rule) can be
+done in a patch version. Major versions will be reserved for massive, sweeping changes in
+rules - in other words, primarily big policy changes rather than simply technical changes.
 
 ## What version should I use?
 
 When choosing which version of this config to use, consider the following:
 
-   * v4.x.x supports the latest ECMA Script features, and supports ESLint's
-     flat config configuration style _only_. On new projects, we recommend
-     using this branch of the config.
-   * v2.x.x allows for ES2015+ features, as well as TypeScript linting.
-   * v1.x.x is the legacy version of our eslint config. This should primarily be used in
-     legacy es5 projects and with node version < 8.10.0. It does not allow for many
-     es2015+ features, such as spread/rest operators and arrow functions.
-      * The v1.x.x branch is not recommended for use in new projects and will only be
-        minimally updated with bug fixes to support legacy code.
-
-## Updating ESLint
-
-Updating ESLint in this project requires multiple steps across both this project and
-[@silvermine/eslint-plugin](https://github.com/silvermine/eslint-plugin-silvermine):
-
-1. Open a PR to update ESLint in @silvermine/eslint-plugin
-   * Note: Linting in the @silvermine/eslint-plugin PR will likely fail because
-    @silvermine/eslint-plugin's version of @silvermine/eslint-config is incompatible with
-    the new version of ESLint. That's ok. We will fix it soon in a subsequent step.
-2. After the PR from step 1 is merged, update @silvermine/eslint-plugin in
-   @silvermine/eslint-config using a `git+https` + git hash URL. The git hash should point
-   to the commit in @silvermine/eslint-plugin where you updated ESLint.
-3. Update ESLint in @silvermine/eslint-config. Open a PR that contains this update and
-   the @silvermine/eslint-plugin update from step 2.
-      * Note: All of the linting and tests in this build should pass.
-4. Publish a new version of @silvermine/eslint-config to the NPM registry
-5. Update @silvermine/eslint-config in @silvermine/eslint-plugin to the version that was
-   just published
-      * Note: All of the linting and tests in this build should now pass.
-6. Publish a new version of @silvermine/eslint-plugin to the NPM registry
-7. Update @silvermine/eslint-plugin in @silvermine/eslint-config using the version that was
-   just published
+   * **v4.x.x** supports the latest ECMAScript features, and supports ESLint's flat config
+     configuration style _only_. On new projects, we recommend using this branch of the
+     config.
+   * **v2.x.x** allows for ES2015+ features, as well as TypeScript linting.
+   * **v1.x.x** is the legacy version of our eslint config. This should primarily be used
+     in legacy es5 projects and with node version < 8.10.0. It does not allow for many
+     es2015+ features, such as spread/rest operators and arrow functions. The v1.x.x
+     branch is not recommended for use in new projects and will only be minimally updated
+     with bug fixes to support legacy code.
 
 ## License
 
 This software is released under the MIT license. See [the license
 file](LICENSE) for more details.
+
+[npm-version]: https://img.shields.io/npm/v/@silvermine/eslint-config.svg
+[npm-version-url]: https://www.npmjs.com/package/@silvermine/eslint-config
+[license-badge]: https://img.shields.io/github/license/silvermine/eslint-config.svg
+[build]: https://github.com/silvermine/eslint-config/actions/workflows/ci.yml/badge.svg
+[build-url]: https://travis-ci.org/silvermine/eslint-config.svg?branch=master
+[coverage]: https://coveralls.io/repos/github/silvermine/eslint-config/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/silvermine/eslint-config?branch=master
+[conventional]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
