@@ -67,18 +67,10 @@ export default [
    {
       files: [ '**/*.ts' ],
       ...typescript,
-      languageOptions: {
-         parserOptions: {
-            project: 'tsconfig.node.json',
-         },
-      },
       ...node,
    },
 ];
 ```
-
-Notice that we must specify the `project` property within `languageOptions.parserOptions`
-to enable TypeScript strongly typed linting.
 
 Below is how you would configure a browser library that uses only vanilla JS:
 
@@ -127,11 +119,6 @@ export default [
    {
       files: [ '**/*.vue' ],
       ...vue,
-      languageOptions: {
-         parserOptions: {
-            project: 'tsconfig.web.json',
-         },
-      },
    },
 ];
 ```

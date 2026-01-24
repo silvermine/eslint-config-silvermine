@@ -1,20 +1,11 @@
 import type { Linter } from 'eslint';
 import stylistic from '@stylistic/eslint-plugin';
 import typescriptESLint from 'typescript-eslint';
-import typescriptESLintParser from '@typescript-eslint/parser';
 
 const config: Linter.Config = {
    plugins: {
       '@typescript-eslint': typescriptESLint.plugin,
       '@stylistic': stylistic,
-   },
-   languageOptions: {
-      parser: typescriptESLintParser,
-      parserOptions: {
-         sourceType: 'module',
-         tsconfigRootDir: process.cwd(),
-         projectService: true,
-      },
    },
    rules: {
       // The standard ESLint `no-dupe-class-members` rule will report false
@@ -201,7 +192,6 @@ const config: Linter.Config = {
       '@typescript-eslint/no-empty-interface': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-for-in-array': 'error',
-      '@typescript-eslint/no-misused-promises': 'error',
 
       // Turn off the core no-use-before-define to avoid double reporting errors.
       'no-use-before-define': 'off',
@@ -212,7 +202,6 @@ const config: Linter.Config = {
             'typedefs': false,
          },
       ],
-      '@typescript-eslint/restrict-plus-operands': 'error',
 
       // Stylistic rules
       '@stylistic/member-delimiter-style': 'error',
