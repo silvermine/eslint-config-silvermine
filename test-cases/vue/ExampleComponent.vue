@@ -10,6 +10,6 @@ import { onMounted } from 'vue';
 let myVar = null;
 
 onMounted(async () => {
-   myVar = myVar === null ?? 'test';
+   myVar = myVar ?? 'test';
 });
 </script>
