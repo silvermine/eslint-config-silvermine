@@ -4,14 +4,7 @@
 import { describe, it } from 'vitest';
 import rule from '../../src/plugin/rules/call-indentation.js';
 import formatCode from '../code-helper.js';
-import { RuleTester } from 'eslint';
-
-const ruleTester = new RuleTester({
-   languageOptions: {
-      ecmaVersion: 2022,
-      sourceType: 'script',
-   },
-});
+import * as ruleTester from '../rule-testers.js';
 
 const MSG_ARG_ON_NEW_LINE = 'When arguments are on their own line, they must all be on their own line',
       MSG_PAREN_ON_NEW_LINE = 'Closing parenthesis should be on a new line',
@@ -239,14 +232,88 @@ const validExample = formatCode(
 // Tests
 // ------------------------------------------------------------------------------
 
+// TypeScript-specific tests for generic calls
+const tsValidExamples = [
+   // Generic call with no arguments (e.g., Vue's defineProps)
+   formatCode(
+      'defineProps<{',
+      '   foo: string;',
+      '}>();'
+   ),
+   // Generic call WITH arguments - proper indentation
+   formatCode(
+      'createStore<State>(',
+      '   initialState,',
+      '   options',
+      ');'
+   ),
+   // Generic call with inline arguments
+   formatCode(
+      'createStore<State>(initialState, options);'
+   ),
+];
+
+const tsInvalidExamples = [
+   // Zero-argument call with bad indentation
+   {
+      code: formatCode(
+         'someFnCall(',
+         '',
+         '   );'
+      ),
+      errors: [
+         {
+            message: MSG_CALL_SAME_INDENT,
+            type: 'CallExpression',
+         },
+      ],
+   },
+   // Generic call with bad indentation
+   {
+      code: formatCode(
+         'createStore<State>(',
+         '      initialState,',
+         '   options',
+         ');'
+      ),
+      errors: [
+         {
+            message: 'Expected indent of 3, found indent of 6',
+            type: 'CallExpression',
+         },
+      ],
+   },
+   // Generic call with closing paren on wrong line
+   {
+      code: formatCode(
+         'createStore<State>(',
+         '   initialState);'
+      ),
+      errors: [
+         {
+            message: MSG_CALL_SAME_INDENT,
+            type: 'CallExpression',
+         },
+         {
+            message: MSG_PAREN_ON_NEW_LINE,
+            type: 'CallExpression',
+         },
+      ],
+   },
+];
+
 describe('call-indentation', () => {
    it('should pass RuleTester tests', () => {
-      ruleTester.run('call-indentation', rule, {
-         valid: [
-            validExample,
-         ],
-
+      ruleTester.es6().run('call-indentation', rule, {
+         valid: [ validExample ],
          invalid: invalidExamples,
+      });
+   });
+
+   it('should handle TypeScript generic calls', () => {
+      ruleTester.typeScript().run('call-indentation', rule, {
+         valid: tsValidExamples,
+         invalid: tsInvalidExamples,
       });
    });
 });

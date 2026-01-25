@@ -37,8 +37,23 @@ const rule: Rule.RuleModule = {
          const callee = node.callee as Callee,
                calleeEndLine = callee.loc?.end.line ?? 0,
                nodeEndLine = node.loc?.end.line ?? 0,
-               lineIndentationMatches = helper.lineIndentationMatches(calleeEndLine, nodeEndLine),
-               endParenLocation = node.loc?.end,
+               lineIndentationMatches = helper.lineIndentationMatches(calleeEndLine, nodeEndLine);
+
+         // check if closing parenthesis is correctly indented
+         if (!lineIndentationMatches) {
+            context.report({
+               node: node,
+               message: MSG_CALL_SAME_INDENT,
+            });
+         }
+
+         // Nothing more to validate if there are no arguments (e.g., generic calls like
+         // `defineProps<{...}>()`)
+         if (node.arguments.length === 0) {
+            return;
+         }
+
+         const endParenLocation = node.loc?.end,
                lastArg = node.arguments[node.arguments.length - 1],
                firstArg = node.arguments[0],
                indentAmount = helper.indent,
@@ -73,14 +88,6 @@ const rule: Rule.RuleModule = {
                node: node,
                loc: node.loc!.start,
                message: MSG_MULTIPLE_MULTILINE_ARGS,
-            });
-         }
-
-         // check if closing parenthesis is correctly indented
-         if (!lineIndentationMatches) {
-            context.report({
-               node: node,
-               message: MSG_CALL_SAME_INDENT,
             });
          }
 
