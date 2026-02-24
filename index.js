@@ -17,6 +17,7 @@ const ignores = require('./partials/ignores'),
       vueBaseRules = require('./partials/vue/vue-base'),
       vue3rules = require('./partials/vue/vue-3'),
       typeDefintions = require('./partials/type-definitions'),
+      toolboxRules = require('./partials/toolbox-rules'),
       esLint = require('@eslint/js'),
       typescriptESLint = require('typescript-eslint'),
       eslintPluginVue = require('eslint-plugin-vue');
@@ -63,4 +64,5 @@ module.exports = [
          },
       },
    },
+   ...toolboxRules,
 ];
