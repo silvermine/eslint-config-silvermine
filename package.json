@@ -5,7 +5,8 @@
    "main": "index.js",
    "scripts": {
       "check-node-version": "check-node-version --npm 10.5.0",
-      "test": "npm run eslint",
+      "test": "npm run test:plugin && npm run eslint",
+      "test:plugin": "node --test plugin/tests/rules/*.test.js",
       "release": "standard-version",
       "commitlint": "commitlint --from ee3b407",
       "eslint": "eslint .",
@@ -31,7 +32,6 @@
    "homepage": "https://github.com/silvermine/eslint-config-silvermine#readme",
    "dependencies": {
       "@eslint/js": "8.57.0",
-      "@silvermine/eslint-plugin-silvermine": "2.5.0",
       "@stylistic/eslint-plugin": "3.0.1",
       "@typescript-eslint/parser": "7.12.0",
       "eslint-plugin-vue": "9.27.0",
@@ -40,14 +40,14 @@
    },
    "devDependencies": {
       "@silvermine/standardization": "2.0.0",
+      "@silvermine/typescript-config": "github:silvermine/typescript-config#ea8b79237aee970a15ab85beedf8e524478ef671",
       "@types/eslint__js": "8.42.3",
+      "@vue/tsconfig": "0.7.0",
       "cz-conventional-changelog": "3.0.2",
       "eslint": "8.57.0",
       "standard-version": "7.0.1",
       "typescript": "5.8.3",
-      "@silvermine/typescript-config": "github:silvermine/typescript-config#ea8b79237aee970a15ab85beedf8e524478ef671",
-      "vue": "3.5.18",
-      "@vue/tsconfig": "0.7.0"
+      "vue": "3.5.18"
    },
    "peerDependencies": {
       "eslint": ">= 8.57.0"
