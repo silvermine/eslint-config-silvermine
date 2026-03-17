@@ -1,10 +1,12 @@
 const esLintPluginSilvermine = require('../plugin/index'),
-      stylistic = require('@stylistic/eslint-plugin');
+      stylistic = require('@stylistic/eslint-plugin'),
+      nodePlugin = require('eslint-plugin-n');
 
 module.exports = {
    plugins: {
       '@silvermine/eslint-plugin-silvermine': esLintPluginSilvermine, // Our custom rules
       '@stylistic': stylistic,
+      'n': nodePlugin,
    },
 
    languageOptions: {
@@ -113,14 +115,14 @@ module.exports = {
       'no-undef-init': 'error',
       'no-unused-vars': 'error',
       'no-use-before-define': [ 'error', { 'functions': false } ],
-      'callback-return': [ 'error', [ 'callback', 'cb', 'next', 'done' ] ],
-      'global-require': 'error',
-      'handle-callback-err': 'error',
-      'no-new-require': 'error',
-      'no-path-concat': 'error',
-      'no-process-env': 'error',
-      'no-process-exit': 'error',
-      'no-sync': 'error',
+      'n/callback-return': [ 'error', [ 'callback', 'cb', 'next', 'done' ] ],
+      'n/global-require': 'error',
+      'n/handle-callback-err': 'error',
+      'n/no-new-require': 'error',
+      'n/no-path-concat': 'error',
+      'n/no-process-env': 'error',
+      'n/no-process-exit': 'error',
+      'n/no-sync': 'error',
       'camelcase': 'error',
       'consistent-this': [ 'error', 'self' ],
       'max-depth': [ 'error', 4 ],
