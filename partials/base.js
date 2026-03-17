@@ -139,7 +139,7 @@ module.exports = {
       'no-lonely-if': 'error',
       'no-negated-condition': 'error',
       'no-nested-ternary': 'error',
-      'no-new-object': 'error',
+      'no-object-constructor': 'error',
       'no-plusplus': [
          'error',
          { 'allowForLoopAfterthoughts': true },
@@ -206,7 +206,7 @@ module.exports = {
             'maxEOF': 0,
          },
       ],
-      '@stylistic/func-call-spacing': 'error',
+      '@stylistic/function-call-spacing': 'error',
       '@stylistic/no-trailing-spaces': 'error',
       '@stylistic/no-whitespace-before-property': 'error',
       '@stylistic/object-curly-spacing': [ 'error', 'always' ],
