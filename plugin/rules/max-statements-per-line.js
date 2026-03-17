@@ -20,7 +20,8 @@
 // Requirements
 // ------------------------------------------------------------------------------
 
-const astUtils = require('../helpers/ast-utils');
+const astUtils = require('../helpers/ast-utils'),
+      { isUndefined } = require('@silvermine/toolbox');
 
 // ------------------------------------------------------------------------------
 // Rule Definition
@@ -59,7 +60,7 @@ module.exports = {
 
       const sourceCode = context.sourceCode,
             options = context.options[0] || {},
-            maxStatementsPerLine = typeof options.max === 'undefined' ? 1 : options.max;
+            maxStatementsPerLine = isUndefined(options.max) ? 1 : options.max;
 
       let lastStatementLine = 0,
           numberOfStatementsOnThisLine = 0,

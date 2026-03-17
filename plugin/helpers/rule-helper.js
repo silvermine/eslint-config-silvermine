@@ -1,6 +1,7 @@
 'use strict';
 
-var DEFAULT_OPTIONS;
+var { isUndefined } = require('@silvermine/toolbox'),
+    DEFAULT_OPTIONS;
 
 DEFAULT_OPTIONS = {
    IndentChar: ' ',
@@ -35,7 +36,7 @@ class RuleHelper {
       var line = this.lines[lineNumber - 1],
           regex = new RegExp('[^ ' + this.indentChar + ']');
 
-      if (line === undefined) {
+      if (isUndefined(line)) {
          throw new Error('Invalid lineNumber ' + lineNumber + ' supplied to lineIndent');
       }
 

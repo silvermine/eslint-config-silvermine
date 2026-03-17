@@ -5,6 +5,8 @@
 
 'use strict';
 
+var { isNull } = require('@silvermine/toolbox');
+
 module.exports = {
 
    meta: {
@@ -19,11 +21,11 @@ module.exports = {
 
          if (node.declarations && node.declarations.length > 1) {
             initialized = node.declarations.filter(function(decl) {
-               return decl.init !== null;
+               return !isNull(decl.init);
             });
 
             uninitialized = node.declarations.filter(function(decl) {
-               return decl.init === null;
+               return isNull(decl.init);
             });
 
             if (initialized.length > 0 && uninitialized.length > 0) {

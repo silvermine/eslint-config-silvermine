@@ -9,7 +9,8 @@ var MSG_ARG_ON_NEW_LINE = 'When arguments are on their own line, they must all b
     MSG_ARG_ON_SAME_LINE = 'Argument should start on the ending line of previous argument',
     MSG_PAREN_ON_SAME_LINE = 'Closing parenthesis should be on same line as last argument',
     MSG_MULTIPLE_MULTILINE_ARGS = 'Only one multiline argument allowed',
-    RuleHelper = require('../helpers/rule-helper');
+    RuleHelper = require('../helpers/rule-helper'),
+    { isEmpty } = require('@silvermine/toolbox');
 
 // ------------------------------------------------------------------------------
 // Rule Definition
@@ -34,7 +35,7 @@ module.exports = {
              indentAmount, calleeIndent, startLine, allArgsNewLine,
              countMultilineArgs, nodesByStartLine, prevArg;
 
-         if (node.arguments.length === 0) {
+         if (isEmpty(node.arguments)) {
             return;
          }
 

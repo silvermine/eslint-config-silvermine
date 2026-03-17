@@ -4,7 +4,8 @@
 
 'use strict';
 
-var RuleHelper = require('../helpers/rule-helper');
+var RuleHelper = require('../helpers/rule-helper'),
+    { isNull } = require('@silvermine/toolbox');
 
 // ------------------------------------------------------------------------------
 // Rule Definition
@@ -116,7 +117,7 @@ module.exports = {
             }
          }
 
-         if (node.object && node.object.type === 'FunctionExpression' || numberOfLines === null) {
+         if (node.object && node.object.type === 'FunctionExpression' || isNull(numberOfLines)) {
             return;
          }
 

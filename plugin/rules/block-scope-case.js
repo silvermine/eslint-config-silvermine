@@ -4,6 +4,8 @@
 
 'use strict';
 
+var { isEmpty } = require('@silvermine/toolbox');
+
 module.exports = {
 
    meta: {
@@ -15,7 +17,7 @@ module.exports = {
 
       return {
          'SwitchCase': function(node) {
-            if (node.consequent.length === 0) {
+            if (isEmpty(node.consequent)) {
                return;
             }
 
