@@ -2,9 +2,6 @@
 
 [![NPM Version](https://img.shields.io/npm/v/@silvermine/eslint-config.svg)](https://www.npmjs.com/package/@silvermine/eslint-config)
 [![License](https://img.shields.io/github/license/silvermine/eslint-config-silvermine.svg)](./LICENSE)
-[![Build Status](https://travis-ci.org/silvermine/eslint-config-silvermine.svg?branch=master)](https://travis-ci.org/silvermine/eslint-config-silvermine)
-[![Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine.svg)](https://david-dm.org/silvermine/eslint-config-silvermine)
-[![Dev Dependency Status](https://david-dm.org/silvermine/eslint-config-silvermine/dev-status.svg)](https://david-dm.org/silvermine/eslint-config-silvermine#info=devDependencies&view=table)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 
@@ -33,7 +30,7 @@ Example:
 }
 ```
 
-## Migration to ESLint flag config
+## Migration to ESLint flat config
 
 ESLint version 8.57 and later enable support for ESLint's flat config. As opposed
 to using a customized configuration engine, this enables users to configure ESLint
@@ -176,48 +173,37 @@ the `useFlatConfig`option:
 
 ## Notes on Semantic Versioning
 
-See the [notes we made in eslint-plugin-silvermine][semver-notes] regarding our use of
-version numbers here. The same decisions made for that repo also apply to this repo,
-basically for the same reasons.
+Silvermine ESLint rules are a bit of a special case when it comes to semantic versioning.
+This config is a development tool; adding or tightening a rule may cause lint errors in
+consuming projects, but it does not break runtime behavior. So what is a "breaking change"
+in this repo? Definitely a major change to our coding standards (e.g. changing how many
+spaces we use for indents, or changing to tabs) would be a major, breaking change because
+every code file would need to be changed. But there are many smaller changes that can be
+made (introducing a new rule that we've basically followed by convention, for example)
+that are not really breaking, but may require some minor codebase changes when you upgrade
+to the newer rule config. Even fixing a bug (a patch version) could require changes to
+your codebase if the rule implementation was not finding violations previously.
 
-[semver-notes]: https://github.com/silvermine/eslint-plugin-silvermine/#note-on-semantic-versioning
+Thus, we've decided that on this particular repo we will not strictly follow semantic
+versioning. Instead, new rules can be added with a minor version bump. Something that's
+strictly a bug fix of an existing rule (not changing the principle of the rule) can be
+done in a patch version. Major versions will be reserved for massive, sweeping changes in
+rules (primarily big policy changes rather than simply technical changes, e.g. a peer
+dependency bump).
 
 ## What version should I use?
 
 When choosing which version of this config to use, consider the following:
 
-   * v4.x.x supports the latest ECMA Script features, and supports ESLint's
-     flat config configuration style _only_. On new projects, we recommend
-     using this branch of the config.
+   * v4.x.x requires ESLint 9 and uses flat config _only_. On new projects, we recommend
+     using this version.
+   * v3.x.x requires ESLint 8.57+ and uses flat config _only_.
    * v2.x.x allows for ES2015+ features, as well as TypeScript linting.
    * v1.x.x is the legacy version of our eslint config. This should primarily be used in
      legacy es5 projects and with node version < 8.10.0. It does not allow for many
      es2015+ features, such as spread/rest operators and arrow functions.
       * The v1.x.x branch is not recommended for use in new projects and will only be
         minimally updated with bug fixes to support legacy code.
-
-## Updating ESLint
-
-Updating ESLint in this project requires multiple steps across both this project and
-[@silvermine/eslint-plugin](https://github.com/silvermine/eslint-plugin-silvermine):
-
-1. Open a PR to update ESLint in @silvermine/eslint-plugin
-   * Note: Linting in the @silvermine/eslint-plugin PR will likely fail because
-    @silvermine/eslint-plugin's version of @silvermine/eslint-config is incompatible with
-    the new version of ESLint. That's ok. We will fix it soon in a subsequent step.
-2. After the PR from step 1 is merged, update @silvermine/eslint-plugin in
-   @silvermine/eslint-config using a `git+https` + git hash URL. The git hash should point
-   to the commit in @silvermine/eslint-plugin where you updated ESLint.
-3. Update ESLint in @silvermine/eslint-config. Open a PR that contains this update and
-   the @silvermine/eslint-plugin update from step 2.
-      * Note: All of the linting and tests in this build should pass.
-4. Publish a new version of @silvermine/eslint-config to the NPM registry
-5. Update @silvermine/eslint-config in @silvermine/eslint-plugin to the version that was
-   just published
-      * Note: All of the linting and tests in this build should now pass.
-6. Publish a new version of @silvermine/eslint-plugin to the NPM registry
-7. Update @silvermine/eslint-plugin in @silvermine/eslint-config using the version that was
-   just published
 
 ## License
 
