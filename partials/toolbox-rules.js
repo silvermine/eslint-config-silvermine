@@ -16,6 +16,7 @@ const TYPEOF_HELPERS = {
 const localPlugin = {
    rules: {
       'no-in-operator': {
+         meta: { type: 'suggestion', schema: [] },
          create(context) {
             return {
                BinaryExpression(node) {
@@ -31,6 +32,7 @@ const localPlugin = {
       },
 
       'no-typeof-check': {
+         meta: { type: 'suggestion', schema: [] },
          create(context) {
             return {
                BinaryExpression(node) {
@@ -66,6 +68,7 @@ const localPlugin = {
       },
 
       'prefer-is-empty': {
+         meta: { type: 'suggestion', schema: [] },
          create(context) {
             return {
                BinaryExpression(node) {
@@ -98,6 +101,7 @@ const localPlugin = {
       },
 
       'prefer-compact': {
+         meta: { type: 'suggestion', schema: [] },
          create(context) {
             return {
                CallExpression(node) {
@@ -121,6 +125,7 @@ const localPlugin = {
       },
 
       'prefer-is-array': {
+         meta: { type: 'suggestion', schema: [] },
          create(context) {
             return {
                CallExpression(node) {
@@ -142,6 +147,7 @@ const localPlugin = {
       },
 
       'no-null-check': {
+         meta: { type: 'suggestion', schema: [] },
          create(context) {
             return {
                BinaryExpression(node) {
@@ -167,6 +173,7 @@ const localPlugin = {
       },
 
       'no-undefined-check': {
+         meta: { type: 'suggestion', schema: [] },
          create(context) {
             return {
                BinaryExpression(node) {
