@@ -1,4 +1,4 @@
-const esLintPluginSilvermine = require('@silvermine/eslint-plugin-silvermine'),
+const esLintPluginSilvermine = require('../plugin/index'),
       stylistic = require('@stylistic/eslint-plugin');
 
 module.exports = {
