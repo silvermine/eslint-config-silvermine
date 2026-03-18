@@ -113,7 +113,7 @@ module.exports = {
       'no-shadow-restricted-names': 'error',
       'no-undef': 'error',
       'no-undef-init': 'error',
-      'no-unused-vars': 'error',
+      'no-unused-vars': [ 'error', { 'caughtErrors': 'none' } ],
       'no-use-before-define': [ 'error', { 'functions': false } ],
       'n/callback-return': [ 'error', [ 'callback', 'cb', 'next', 'done' ] ],
       'n/global-require': 'error',
