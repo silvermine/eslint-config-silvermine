@@ -12,7 +12,7 @@ var fluentChaining = require('../../rules/fluent-chaining'),
     RuleTester = require('eslint').RuleTester,
     fs = require('fs'),
     path = require('path'),
-    ruleTester = new RuleTester(),
+    ruleTester = new RuleTester({ languageOptions: { sourceType: 'script' } }),
     es6RuleTester = require('../ruleTesters').es6();
 
 // ------------------------------------------------------------------------------
@@ -187,7 +187,7 @@ function checkSpacingErrorWhenCallHasFunctionArguments() {
       errors: [
          spacingErrorMessage('then', 3, ' '),
       ],
-      output: code, // output should be unchanged
+      output: null, // no autofix expected
    };
 }
 
