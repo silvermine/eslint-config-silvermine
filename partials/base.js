@@ -14,7 +14,7 @@ module.exports = {
    },
 
    linterOptions: {
-      'reportUnusedDisableDirectives': true,
+      'reportUnusedDisableDirectives': 'error',
    },
 
    rules: {
