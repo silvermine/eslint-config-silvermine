@@ -9,8 +9,8 @@ module.exports = {
       'parserOptions': {
          'parser': typescriptESLint.parser,
          'sourceType': 'module',
-         // Disable warning banner for possibly incompatible versions of TypeScript
-         'loggerFn': false,
+         // Disable warning for possibly incompatible versions of TypeScript
+         'warnOnUnsupportedTypeScriptVersion': false,
       },
    },
    'rules': {
