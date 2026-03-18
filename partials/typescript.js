@@ -1,4 +1,4 @@
-const typescriptESLintParser = require('@typescript-eslint/parser'),
+const typescriptESLint = require('typescript-eslint'),
       stylistic = require('@stylistic/eslint-plugin');
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
    },
    languageOptions: {
       'parserOptions': {
-         'parser': typescriptESLintParser,
+         'parser': typescriptESLint.parser,
          'sourceType': 'module',
          // Disable warning banner for possibly incompatible versions of TypeScript
          'loggerFn': false,

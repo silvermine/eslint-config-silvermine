@@ -1,12 +1,12 @@
 'use strict';
 
-const typescriptESLintParser = require('@typescript-eslint/parser'),
+const typescriptESLint = require('typescript-eslint'),
       globals = require('globals');
 
 module.exports = {
    languageOptions: {
       parserOptions: {
-         parser: typescriptESLintParser,
+         parser: typescriptESLint.parser,
          sourceType: 'module',
       },
       globals: {
