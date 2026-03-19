@@ -46,7 +46,7 @@ module.exports = {
    'vue/v-on-style': 'error',
    'vue/v-slot-style': 'error',
    'vue/attributes-order': 'off',
-   'vue/component-tags-order': [
+   'vue/block-order': [
       'error',
       {
          'order': [ 'template', 'script', 'style' ],
@@ -81,7 +81,7 @@ module.exports = {
       },
    ],
    'vue/no-duplicate-attr-inheritance': 'error',
-   'vue/no-invalid-model-keys': 'error',
+   'vue/valid-model-definition': 'error',
    'vue/no-multiple-objects-in-class': 'error',
    'vue/no-multiple-template-root': 'off',
    'vue/no-potential-component-option-typo': 'error',
